@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-api-key-cst.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-api-key-cst.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-api-key-cst_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-api-key-cst_main.iml" group="sample-api-key-cst" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample-api-key-cst_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sample-api-key-cst_test.iml" group="sample-api-key-cst" />
+    </modules>
+  </component>
+</project>
