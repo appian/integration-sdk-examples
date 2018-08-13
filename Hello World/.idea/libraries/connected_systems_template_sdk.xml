@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="connected-systems-template-sdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/connected-systems-template-sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libs/connected-systems-template-sdk-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

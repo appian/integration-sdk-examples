@@ -1,0 +1,28 @@
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+  flatDir {
+     dirs 'lib'
+  }
+//  Uncomment if using external libraries
+//  mavenCentral()
+}
+
+dependencies {
+  compileOnly fileTree(dir: 'libs', include: '*.jar')
+//  Example external dependency -- uncomment mavenCentral() above first
+//  testCompile 'junit;junit;4.12'
+//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.0.1'
+}
+
+
+jar {
+  duplicatesStrategy = DuplicatesStrategy.FAIL
+  into('META-INF/lib') {
+    from(configurations.runtimeClasspath)
+  }
+}
+
+
