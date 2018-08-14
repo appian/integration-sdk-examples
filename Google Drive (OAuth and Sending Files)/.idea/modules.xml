@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst.iml" filepath="$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst_main.iml" filepath="$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst_main.iml" group="google-drive-oauth-sample-cst" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst_test.iml" filepath="$PROJECT_DIR$/.idea/modules/google-drive-oauth-sample-cst_test.iml" group="google-drive-oauth-sample-cst" />
+    </modules>
+  </component>
+</project>
