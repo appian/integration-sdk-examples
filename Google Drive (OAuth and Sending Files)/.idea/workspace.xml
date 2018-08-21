@@ -50,11 +50,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GoogleDriveSendFileIntegrationTemplate.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GoogleDriveSendFileIntegrationTemplate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSendFileIntegrationTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1806">
-              <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+            <state relative-caret-position="2527">
+              <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,21 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoogleJsonResponseException.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.24.1/9b7ae0b12fd15dcf5e03007cf1d83724be62b77d/google-api-client-1.24.1-sources.jar!/com/google/api/client/googleapis/json/GoogleJsonResponseException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-746">
-              <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoogleDriveSampleConnectedSystemTemplate.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GoogleDriveSampleConnectedSystemTemplate.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="17" column="75" lean-forward="true" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
+            <state relative-caret-position="988">
+              <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -277,8 +267,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$USER_HOME$/.gradle/gradle.properties" value="1774008030" />
-        <entry key="$PROJECT_DIR$" value="6136843384000" />
+        <entry key="$USER_HOME$/.gradle/gradle.properties" value="2013632607" />
+        <entry key="$PROJECT_DIR$" value="6137077876000" />
         <entry key="$PROJECT_DIR$/build.gradle" value="61056034" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="975608090" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="22025762" />
@@ -399,16 +389,16 @@
         <option value="$PROJECT_DIR$/src/main/resources/resources_en_US.properties" />
         <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/src/main/resources/appian-plugin.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSendFileIntegrationTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1464" />
-    <option name="y" value="23" />
+    <option name="x" value="698" />
+    <option name="y" value="-1386" />
     <option name="width" value="1897" />
-    <option name="height" value="1364" />
+    <option name="height" value="1386" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -425,7 +415,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -436,96 +427,7 @@
             <path>
               <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
               <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="mycorp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="mycorp" type="462c0819:PsiDirectoryNode" />
-              <item name="sampletemplate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="mycorp" type="462c0819:PsiDirectoryNode" />
-              <item name="sampletemplate" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="sample-cst-1.0-SNAPSHOT" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="tmp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-              <item name="connected-systems-template-sdk.jar" type="ab9368bb:PsiFileNode" />
             </path>
             <path>
               <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
@@ -544,14 +446,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Google Drive (OAuth and Sending Files)" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="google-drive-oauth-sample-cst" type="b2602c69:ProjectViewProjectNode" />
@@ -564,9 +458,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -578,6 +471,9 @@
     <property name="editorconfig.notification" value="View&#10;" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
     </key>
@@ -728,25 +624,23 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1464" y="23" width="1897" height="1364" extended-state="0" />
+    <frame x="698" y="-1386" width="1897" height="1386" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.078802206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.078802206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27169812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27439353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939324" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16592725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -758,7 +652,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939324" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -771,6 +667,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSendFileIntegrationTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="17" column="75" lean-forward="true" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources_en_US.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -779,51 +693,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41876">
-          <caret line="2426" column="15" lean-forward="false" selection-start-line="2426" selection-start-column="15" selection-end-line="2426" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding>
-            <element signature="e#1888#1889#0" expanded="false" />
-            <element signature="e#1911#1912#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3971">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -853,51 +731,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46094">
-          <caret line="2426" column="15" lean-forward="false" selection-start-line="2426" selection-start-column="15" selection-end-line="2426" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding>
-            <element signature="e#1888#1889#0" expanded="false" />
-            <element signature="e#1911#1912#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4446">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -919,13 +761,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/HttpRequestInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="956">
-          <caret line="66" column="17" lean-forward="false" selection-start-line="66" selection-start-column="17" selection-end-line="66" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/HttpRequestInitializer.java" />
     <entry file="jar://$PROJECT_DIR$/libs/connected-systems-template-sdk.jar!/com/appiancorp/connectedsystems/templateframework/sdk/service/v2/ConnectedSystemTemplateInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -951,48 +787,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
           <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="65" column="36" lean-forward="false" selection-start-line="65" selection-start-column="36" selection-end-line="65" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="2426" column="15" lean-forward="false" selection-start-line="2426" selection-start-column="15" selection-end-line="2426" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="56" column="9" lean-forward="false" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
-          <folding>
-            <element signature="e#1888#1889#0" expanded="false" />
-            <element signature="e#1911#1912#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-          <folding>
-            <element signature="e#10065#10066#0" expanded="false" />
-            <element signature="e#10148#10149#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/InputStreamContent.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/Drive.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.24.1/5b63466a6ed8d004d7f1ec5454e67aeb02857d05/google-http-client-1.24.1-sources.jar!/com/google/api/client/http/AbstractInputStreamContent.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/resources_en_US.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1005,34 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="93" column="39" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding>
-            <marker date="1534216974629" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534216974629" expanded="false" signature="191:590" ph="..." />
-            <marker date="1534216974629" expanded="false" signature="853:860" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="883:887" ph=" }" />
-            <marker date="1534216974629" expanded="true" signature="951:1077" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1010:1061" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1119:1233" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1315:1504" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1624:1756" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1702:1750" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="1827:1939" ph="{...}" />
-            <marker date="1534216974629" expanded="false" signature="1994:2001" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="2042:2046" ph=" }" />
-            <marker date="1534216974629" expanded="true" signature="2115:2232" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2266:2342" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2380:4650" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2496:2503" ph="{}" />
-            <marker date="1534216974629" expanded="true" signature="2597:2832" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2891:2941" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3036:3133" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3237:3314" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3373:3430" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3519:3576" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3617:3695" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3729:4005" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="4043:4646" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,55 +817,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.24.1/9b7ae0b12fd15dcf5e03007cf1d83724be62b77d/google-api-client-1.24.1-sources.jar!/com/google/api/client/googleapis/services/AbstractGoogleClientRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="467" column="11" lean-forward="false" selection-start-line="467" selection-start-column="11" selection-end-line="467" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.24.1/9b7ae0b12fd15dcf5e03007cf1d83724be62b77d/google-api-client-1.24.1-sources.jar!/com/google/api/client/googleapis/services/AbstractGoogleClientRequest.java" />
     <entry file="jar://$PROJECT_DIR$/libs/connected-systems-template-sdk.jar!/com/appiancorp/connectedsystems/templateframework/sdk/configuration/DomainSpecificLanguage.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-          <folding>
-            <marker date="1534216974629" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534216974629" expanded="false" signature="191:1533" ph="..." />
-            <marker date="1534216974629" expanded="true" signature="1614:1619" ph="{}" />
-            <marker date="1534216974629" expanded="false" signature="1659:1666" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="1690:1694" ph=" }" />
-            <marker date="1534216974629" expanded="false" signature="1726:1733" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="1770:1774" ph=" }" />
-            <marker date="1534216974629" expanded="true" signature="1886:1967" ph="{...}" />
-            <marker date="1534216974629" expanded="false" signature="2029:2036" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="2076:2080" ph=" }" />
-            <marker date="1534216974629" expanded="true" signature="2161:2220" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2356:2410" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2479:2532" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2599:2651" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2720:2773" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="2844:2898" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3050:3110" ph="{...}" />
-            <marker date="1534216974629" expanded="false" signature="3149:3156" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="3183:3187" ph=" }" />
-            <marker date="1534216974629" expanded="false" signature="3247:3254" ph=" { " />
-            <marker date="1534216974629" expanded="false" signature="3288:3292" ph=" }" />
-            <marker date="1534216974629" expanded="true" signature="3344:3412" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3465:3534" ph="{...}" />
-            <marker date="1534216974629" expanded="true" signature="3587:3656" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/model/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="56" column="33" lean-forward="true" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-drive/v3-rev125-1.24.1/ba4f20d85db37c16e1a43c9400d27f8c948dcb24/google-api-services-drive-v3-rev125-1.24.1-sources.jar!/com/google/api/services/drive/model/File.java" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1113,33 +846,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.24.1/9b7ae0b12fd15dcf5e03007cf1d83724be62b77d/google-api-client-1.24.1-sources.jar!/com/google/api/client/googleapis/json/GoogleJsonResponseException.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSendFileIntegrationTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2527">
+          <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSampleConnectedSystemTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="17" column="75" lean-forward="true" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
+        <state relative-caret-position="988">
+          <caret line="64" column="19" lean-forward="false" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.24.1/9b7ae0b12fd15dcf5e03007cf1d83724be62b77d/google-api-client-1.24.1-sources.jar!/com/google/api/client/googleapis/json/GoogleJsonResponseException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-746">
-          <caret line="94" column="30" lean-forward="false" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mycorp/helloworld/templates/GoogleDriveSendFileIntegrationTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

@@ -9,19 +9,19 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationError;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.Document;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostic.IntegrationDesignerDiagnostic;
-import com.appiancorp.connectedsystems.templateframework.sdk.error.IntegrationError;
-import com.appiancorp.connectedsystems.templateframework.sdk.exception.ExpiredTokenException;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appiancorp.connectedsystems.templateframework.sdk.oauth.ExpiredTokenException;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.InputStreamContent;
@@ -30,7 +30,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 
-@TemplateId("GoogleDriveSendFileIntegrationTemplate")
+@TemplateId(name="GoogleDriveSendFileIntegrationTemplate")
 public class GoogleDriveSendFileIntegrationTemplate implements IntegrationTemplate {
 
   public static final String FILE_KEY = "fileId";

@@ -4,17 +4,17 @@ import static com.appiancorp.connectedsystems.templateframework.sdk.configuratio
 import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.textProperty;
 import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.type;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.oauth.OAuthConfigurationData;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.oauth.OAuthConnectedSystemTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.oauth.OAuthConfigurationData;
+import com.appiancorp.connectedsystems.templateframework.sdk.oauth.OAuthConnectedSystemTemplate;
 
-@TemplateId("GoogleDriveSampleConnectedSystemTemplate")
+@TemplateId(name="GoogleDriveSampleConnectedSystemTemplate")
 public class GoogleDriveSampleConnectedSystemTemplate implements OAuthConnectedSystemTemplate {
 
   public static final String CLIENT_ID_KEY = "clientId";
