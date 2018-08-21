@@ -7,21 +7,21 @@ import static com.mycorp.helloworld.templates.HelloWorldConnectedSystemTemplate.
 import java.util.HashMap;
 import java.util.Map;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostic.IntegrationDesignerDiagnostic;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.IntegrationTemplateRequestPolicy;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.IntegrationTemplateType;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
+import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
 
 // Must provide an integration id. This value need only be unique for this connected system
-@TemplateId("HelloWorldIntegrationTemplate")
+@TemplateId(name="HelloWorldIntegrationTemplate")
 // Set template type to READ since this integration does not have side effects
 @IntegrationTemplateType(IntegrationTemplateRequestPolicy.READ)
 public class HelloWorldIntegrationTemplate implements IntegrationTemplate {

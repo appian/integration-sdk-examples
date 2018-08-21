@@ -3,16 +3,16 @@ package com.mycorp.helloworld.templates;
 import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.textProperty;
 import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.type;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ConnectedSystemTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.ConnectedSystemTemplate;
 
-@TemplateId("HelloWorldConnectedSystemTemplate")
+@TemplateId(name="HelloWorldConnectedSystemTemplate")
 public class HelloWorldConnectedSystemTemplate implements ConnectedSystemTemplate {
 
   public static final String CS_PROP_KEY = "csProp";
