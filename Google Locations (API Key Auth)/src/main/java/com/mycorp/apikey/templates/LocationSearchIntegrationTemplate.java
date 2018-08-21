@@ -1,6 +1,8 @@
 package com.mycorp.apikey.templates;
 
-import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.*;
+import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.booleanProperty;
+import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.textProperty;
+import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.type;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -11,26 +13,25 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.util.EntityUtils;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationError;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.BooleanPropertyDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostic.IntegrationDesignerDiagnostic;
-import com.appiancorp.connectedsystems.templateframework.sdk.error.IntegrationError;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.IntegrationTemplateRequestPolicy;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.IntegrationTemplateType;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.IntegrationTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
+import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 // Must provide an integration id. This value need only be unique for this connected system
-@TemplateId("LocationSearchIntegrationTemplate")
+@TemplateId(name="LocationSearchIntegrationTemplate")
 // Set template type to READ since this integration does not have side effects
 @IntegrationTemplateType(IntegrationTemplateRequestPolicy.READ)
 public class LocationSearchIntegrationTemplate implements IntegrationTemplate {

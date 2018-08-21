@@ -12,19 +12,19 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
 
+import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostic.TestConnectionResult;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.annotation.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.service.v2.TestableConnectedSystemTemplate;
+import com.appiancorp.connectedsystems.templateframework.sdk.connectiontesting.TestConnectionResult;
+import com.appiancorp.connectedsystems.templateframework.sdk.connectiontesting.TestableConnectedSystemTemplate;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@TemplateId("APIKeyConnectedSystemTemplate")
+@TemplateId(name="APIKeyConnectedSystemTemplate")
 public class APIKeyConnectedSystemTemplate implements TestableConnectedSystemTemplate {
 
   @Override
