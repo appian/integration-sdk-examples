@@ -1,0 +1,29 @@
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+  flatDir {
+     dirs 'lib'
+  }
+
+//  Using external libraries
+  mavenCentral()
+}
+
+dependencies {
+  compileOnly fileTree(dir: 'libs', include: '*.jar')
+
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
+  implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+  implementation 'com.google.guava:guava:26.0-jre'
+}
+
+jar {
+  duplicatesStrategy = DuplicatesStrategy.FAIL
+  into('META-INF/lib') {
+    from(configurations.runtimeClasspath)
+  }
+}
+
+
