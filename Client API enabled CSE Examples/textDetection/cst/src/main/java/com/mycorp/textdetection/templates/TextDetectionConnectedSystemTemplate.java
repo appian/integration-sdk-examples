@@ -15,7 +15,7 @@ import com.appiancorp.connectedsystems.templateframework.sdk.configuration.State
  * This Connected System stores a secret value, the Google API key, which
  * the Client API will use to submit a request to the Google Text Detection API.
  */
-@TemplateId(name = "TextDetection.cst")
+@TemplateId(name = "TextDetectionConnectedSystemTemplate")
 public class TextDetectionConnectedSystemTemplate implements ConnectedSystemTemplate {
 
   public static final String API_KEY = "apiKey";

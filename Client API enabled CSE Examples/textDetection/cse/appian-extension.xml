@@ -6,6 +6,8 @@
     <version>1.0</version>
   </extension-info>
 
+  <!-- Add a new component with every version you create -->
+  <!-- This v1.0.0 component maps to the v1 folder -->
   <component name="textDetection" key="text.detection.component" version="1.0.0">
     <ruleName>textDetection</ruleName>
     <iconFile>textDetection.svg</iconFile>

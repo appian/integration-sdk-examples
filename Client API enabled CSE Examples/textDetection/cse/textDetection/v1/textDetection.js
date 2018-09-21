@@ -1,4 +1,4 @@
-const CLIENT_API_FRIENDLY_NAME = "detectText";
+const CLIENT_API_FRIENDLY_NAME = "TextDetectionClientApi";
 const TEXT_FOUND = 'textFound';
 
 var connectedSystem, imageUrl, canvas, ctx;
@@ -17,20 +17,12 @@ $(document).ready(function () {
 
     Appian.Component.onNewValue('connectedSystem', cs => {
         connectedSystem = cs;
-        enableDisableButton();
     });
 });
 
 // Utility methods
-function enableDisableButton() {
-    if (connectedSystem) {
-        $('#detect').prop("disabled", false);
-    } else {
-        $('#detect').prop("disabled", true);
-    }
-}
-
 function loadImage() {
+    $('#detect').prop("disabled", true);
     $('#canvas').css('backgroundImage', `url(${imageUrl})`);
     canvasMaintenance();
 }
@@ -43,11 +35,12 @@ function canvasMaintenance() {
     // Clear the strokes on the canvas
     clearCanvas();
 
-    // resize the canvas to match the image
+    // Resize the canvas to match the image
     var img = new Image();
     img.addEventListener("load", function () {
         canvas.width = this.naturalWidth;
         canvas.height = this.naturalHeight;
+        $('#detect').prop("disabled", false);
     });
     img.src = imageUrl;
 }
@@ -62,10 +55,20 @@ function detect() {
 
     Appian.Component.invokeClientApi(connectedSystem, CLIENT_API_FRIENDLY_NAME, payload)
         .then(handleClientApiResponse)
-        .catch(console.log);
+        .catch(handleError);
+}
+
+function handleError(response) {
+    if (response.error && response.error[0]) {
+        Appian.Component.setValidations([error.error]);
+    } else {
+        Appian.Component.setValidations(["An unspecified error occurred"]);
+    }
 }
 
 function handleClientApiResponse(response) {
+    // Clear any error messages
+    Appian.Component.setValidations([]);
     var outputResponse = response.payload.outputResponse;
     Appian.Component.saveValue(TEXT_FOUND, outputResponse.textFound);
 

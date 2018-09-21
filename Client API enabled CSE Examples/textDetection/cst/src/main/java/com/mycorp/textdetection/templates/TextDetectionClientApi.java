@@ -40,7 +40,7 @@ import com.mycorp.textdetection.OutputResponse;
  * then parses the response and returns a map of coordinates and the text found back to the CSE.
  */
 
-@TemplateId(name = "detectText")
+@TemplateId(name = "TextDetectionClientApi")
 public class TextDetectionClientApi implements ClientApi {
 
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().configure(
