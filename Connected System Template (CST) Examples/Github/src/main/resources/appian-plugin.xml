@@ -1,0 +1,17 @@
+<appian-plugin name="Github Connected System Template" key="Github">
+
+  <plugin-info>
+    <description>Github Connected System Template</description>
+    <vendor name="Appian" url="https://appian.com"/>
+    <version>1.0.0</version>
+    <application-version min="7.6.0.4"/>
+  </plugin-info>
+
+  <connected-system-template key="GithubConnectedSystem" name="GithubConnectedSystem"
+                             class="com.mycorp.github.templates.GithubConnectedSystemTemplate">
+
+    <integration-template key="GithubIntegrationTemplate" name="GithubIntegrationTemplate"
+                          class="com.mycorp.github.templates.PullFunctionsIntegration" />
+
+  </connected-system-template>
+</appian-plugin>
