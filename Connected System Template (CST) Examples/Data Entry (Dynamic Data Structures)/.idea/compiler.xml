@@ -2,16 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="data-entry-complex-state-cst_main" target="1.8" />
-      <module name="data-entry-complex-state-cst_test" target="1.8" />
       <module name="data-entry-dynamic-data-structures-cst_main" target="1.8" />
       <module name="data-entry-dynamic-data-structures-cst_test" target="1.8" />
-      <module name="data-entry-dynamic-state-cst_main" target="1.8" />
-      <module name="data-entry-dynamic-state-cst_test" target="1.8" />
-      <module name="data-entry-forms-complex-state-cst_main" target="1.8" />
-      <module name="data-entry-forms-complex-state-cst_test" target="1.8" />
-      <module name="front-desk-clerk-forms-complex-state-cst_main" target="1.8" />
-      <module name="front-desk-clerk-forms-complex-state-cst_test" target="1.8" />
       <module name="hello-world-cst_main" target="1.8" />
       <module name="hello-world-cst_test" target="1.8" />
       <module name="sample-cst_main" target="1.8" />

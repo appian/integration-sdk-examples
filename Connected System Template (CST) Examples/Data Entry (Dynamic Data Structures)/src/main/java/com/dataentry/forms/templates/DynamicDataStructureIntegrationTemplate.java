@@ -1,7 +1,5 @@
 package com.dataentry.forms.templates;
 
-import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.textProperty;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -12,20 +10,17 @@ import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 
+import com.appiancorp.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
+import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
 import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
 import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationTemplate;
 import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.Choice;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyDescriptorBuilder;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.RefreshPolicy;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -33,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @TemplateId(name = "DynamicDataStructureIntegrationTemplate")
-public class DynamicDataStructureIntegrationTemplate implements IntegrationTemplate{
+public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTemplate {
 
   /**
    * This is an example of an Integration Template that uses dynamic data structures. It's a template that
@@ -60,90 +55,50 @@ public class DynamicDataStructureIntegrationTemplate implements IntegrationTempl
   }
 
   @Override
-  public ConfigurationDescriptor getConfigurationDescriptor(
-      ConfigurationDescriptor integrationConfigDescriptor,
-      ConfigurationDescriptor connectedSystemConfigDescriptor,
-      PropertyPath updatedProperty,
+  protected SimpleConfiguration getConfiguration(
+      SimpleConfiguration integrationConfiguration,
+      SimpleConfiguration connectedSystemConfiguration,
+      PropertyPath propertyPath,
       ExecutionContext executionContext) {
-    //The Forms dropdown field is dynamic, meaning that when a change happens in the value of the dropdown,
-    //the whole Integration Template will re-render in order to display the right set of fields for the selected
-    //form. Therefore, we need to access the current state during configuration.
-    PropertyState currentState = getInitialState(integrationConfigDescriptor);
-
-    //This would be where the developer will make a call to an external system to retrieve
-    //data structures. In this example, we will just read from a JSON file.
+    //Here, we read the data structure from an example JSON file. In your template, replace this with whatever
+    // logic you need to retrieve the data structure from your external system.
     JsonNode externalDataTypes = getExternalDataTypes();
     TextPropertyDescriptor formDropdown = createFormDropdown(externalDataTypes);
 
     List<PropertyDescriptor> propertyDescriptors = new ArrayList<>();
     propertyDescriptors.add(formDropdown);
 
-    PropertyPath propertyPath = new PropertyPath("root", FORM_DROPDOWN_KEY);
-    //If the selection in the dropdown changes, add the fields of the selected form to the properties
-    if (propertyPath.equals(updatedProperty)) {
-      List<PropertyDescriptor> formProperties = createFormPropertyDescriptorOnFormSelection(currentState, externalDataTypes);
-      propertyDescriptors.addAll(formProperties);
-    }
+    List<PropertyDescriptor> formProperties = createFormPropertyDescriptorOnFormSelection(integrationConfiguration, externalDataTypes);
+    propertyDescriptors.addAll(formProperties);
 
-    LocalTypeDescriptor localType = DomainSpecificLanguage.type()
-        .name("MyComplexDataType")
-        .properties(propertyDescriptors)
-        .build();
-
-    PropertyState propertyState = generatePropertyState(integrationConfigDescriptor, localType);
-    return ConfigurationDescriptor.builder()
-        .withState(propertyState)
-        .withTypes(localType)
-        .version(1)
-        .build();
+    return integrationConfiguration.setProperties(propertyDescriptors.toArray(new PropertyDescriptor[0]));
   }
 
   /**
    * Typically, you will want to send a HTTP request to an external system here, such as updating
    * a table in a Salesforce system.
-   * In this template, it will simply return the user inputs to the result, request and response tabs.
+   * In this template, we simply return the user inputs to the result, request and response tabs.
    */
   @Override
-  public IntegrationResponse execute(
-      ConfigurationDescriptor integrationConfigDescriptor,
-      ConfigurationDescriptor connectedSystemConfigDescriptor,
+  protected IntegrationResponse execute(
+      SimpleConfiguration integrationConfiguration,
+      SimpleConfiguration connectedSystemConfiguration,
       ExecutionContext executionContext) {
-    PropertyState rootState = integrationConfigDescriptor.getRootState();
-    Map<String, Object> rootStateValues = (Map<String, Object>)rootState.getValue();
+    List<PropertyDescriptor> properties = integrationConfiguration.getProperties();
 
     long start = System.currentTimeMillis();
-    Map<String, String> requestMap = new HashMap<>();
-    for (Map.Entry<String, Object> entry : rootStateValues.entrySet()) {
-      requestMap.put(entry.getKey(), ((PropertyState)entry.getValue()).getValue().toString());
+    Map<String, Object> requestMap = new HashMap<>();
+    for (PropertyDescriptor p : properties) {
+      requestMap.put(p.getKey(), integrationConfiguration.getValue(p.getKey()));
     }
     long end = System.currentTimeMillis();
 
     final long executionTime = end - start;
     final IntegrationDesignerDiagnostic diagnostic = IntegrationDesignerDiagnostic.builder()
-        .addRequestDiagnostic(rootStateValues)
-        .addResponseDiagnostic(requestMap)
+        .addRequestDiagnostic(requestMap)
         .addExecutionTimeDiagnostic(executionTime)
         .build();
-    return IntegrationResponse.forSuccess(rootStateValues).withDiagnostic(diagnostic).build();
-  }
-
-  /**
-   * Since the Form dropdown field is dynamic, we need to generate the property state using the the existing
-   * state which contains the new selection of the form. This will make sure that the new selection of the form
-   * still shows as the selection after the Integration Template re-renders.
-   */
-  private PropertyState generatePropertyState(
-      ConfigurationDescriptor integrationConfigDescriptor,
-      LocalTypeDescriptor localType) {
-    StateGenerator stateGenerator = new StateGenerator(localType);
-    PropertyState propertyState;
-    if (integrationConfigDescriptor == null || integrationConfigDescriptor.getState().isEmpty()) {
-      propertyState = stateGenerator.generateDefaultState(localType);
-    } else {
-      propertyState = stateGenerator.generateFromExistingState(localType,
-          integrationConfigDescriptor.getRootState(), new PropertyPath());
-    }
-    return propertyState;
+    return IntegrationResponse.forSuccess(requestMap).withDiagnostic(diagnostic).build();
   }
 
   /**
@@ -176,26 +131,17 @@ public class DynamicDataStructureIntegrationTemplate implements IntegrationTempl
    * form, this reads in the "account" table data structures and create PropertyDescriptor for "Account ID" and
    * "Account Holder"
    */
-  private List<PropertyDescriptor> createFormPropertyDescriptorOnFormSelection(PropertyState state, JsonNode myCorpDataTypesAsJson){
-    String formSelection = (String)state.getValue(new PropertyPath(FORM_DROPDOWN_KEY));
-    for (JsonNode dataType : myCorpDataTypesAsJson) {
-      if (formSelection.equals(dataType.get(NAME_KEY).asText())) {
-        JsonNode selectedFormDataType = dataType;
-        return createFormPropertyDescriptors(selectedFormDataType);
+  private List<PropertyDescriptor> createFormPropertyDescriptorOnFormSelection(SimpleConfiguration simpleConfiguration, JsonNode myCorpDataTypesAsJson){
+    String formSelection = simpleConfiguration.getValue(FORM_DROPDOWN_KEY);
+    if(formSelection != null) {
+      for (JsonNode dataType : myCorpDataTypesAsJson) {
+        if (formSelection.equals(dataType.get(NAME_KEY).asText())) {
+          JsonNode selectedFormDataType = dataType;
+          return createFormPropertyDescriptors(selectedFormDataType);
+        }
       }
     }
     return Collections.emptyList();
-  }
-
-  /**
-   * This method will return the current state of the Integration Template.
-   */
-  private PropertyState getInitialState(ConfigurationDescriptor integrationConfigDescriptor) {
-    if (integrationConfigDescriptor == null || integrationConfigDescriptor.getState().isEmpty()) {
-      return null;
-    } else {
-      return integrationConfigDescriptor.getRootState();
-    }
   }
 
   /**
@@ -204,7 +150,7 @@ public class DynamicDataStructureIntegrationTemplate implements IntegrationTempl
    */
   private TextPropertyDescriptor createFormDropdown(JsonNode dataTypes) {
     Choice[] dataTypeChoices = createDataTypeChoices(dataTypes);
-    return textProperty().key(FORM_DROPDOWN_KEY)
+    return textProperty(FORM_DROPDOWN_KEY)
         .label(FORMS_DROPDOWN_LABEL)
         .instructionText(FormDropdownInstructionText)
         .choices(dataTypeChoices)
@@ -224,7 +170,7 @@ public class DynamicDataStructureIntegrationTemplate implements IntegrationTempl
         .map(dataTypeName -> DomainSpecificLanguage
             .choice()
             .name(dataTypeName)
-            .textValue(dataTypeName)
+            .value(dataTypeName)
             .build()).toArray(Choice[]::new);
   }
 
