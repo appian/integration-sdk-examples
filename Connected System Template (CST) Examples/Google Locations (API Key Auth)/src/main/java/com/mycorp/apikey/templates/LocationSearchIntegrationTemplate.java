@@ -1,8 +1,6 @@
 package com.mycorp.apikey.templates;
 
-import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.booleanProperty;
-import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.textProperty;
-import static com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage.type;
+import static com.mycorp.apikey.templates.APIKeyConnectedSystemTemplate.API_KEY;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -13,18 +11,13 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.util.EntityUtils;
 
+import com.appiancorp.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
+import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
 import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
 import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationError;
 import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationTemplate;
 import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.BooleanPropertyDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.ConfigurationDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.LocalTypeDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.StateGenerator;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
 import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
 import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
 import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
@@ -34,67 +27,42 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @TemplateId(name="LocationSearchIntegrationTemplate")
 // Set template type to READ since this integration does not have side effects
 @IntegrationTemplateType(IntegrationTemplateRequestPolicy.READ)
-public class LocationSearchIntegrationTemplate implements IntegrationTemplate {
+public class LocationSearchIntegrationTemplate extends SimpleIntegrationTemplate {
 
   @Override
-  public ConfigurationDescriptor getConfigurationDescriptor(
-      ConfigurationDescriptor integrationSystemConfigurationDescriptor,
-      ConfigurationDescriptor connectedSystemConfigurationDescriptor,
+  protected SimpleConfiguration getConfiguration(
+      SimpleConfiguration integrationConfiguration,
+      SimpleConfiguration connectedSystemConfiguration,
       PropertyPath propertyPath,
       ExecutionContext executionContext) {
-
-    if (integrationSystemConfigurationDescriptor != null) {
-      //No dynamic behavior for this integration. The only modifications come from user input
-      return integrationSystemConfigurationDescriptor;
-    }
-
-    //Create user input fields
-    TextPropertyDescriptor searchField = textProperty()
-        .key("searchField")
-        .label("Search Field")
-        .instructionText("Please enter a name, address or phone number")
-        .description("This will find results near your IP address")
-        .placeholder("Grocery")
-        .isRequired(true)
-        .isExpressionable(true)
-        .build();
-    BooleanPropertyDescriptor phoneToggle = booleanProperty()
-        .key("phoneToggle")
-        .label("Phone Number?")
-        .instructionText("Is your query a phone number?")
-        .build();
-
-    //Create the structured type that holds all of the integration information
-    LocalTypeDescriptor localTypeDescriptor = type()
-        .name("topLevelType")
-        .properties(searchField, phoneToggle)
-        .build();
-
-    //Generates the initial PropertyState object for the given local type
-    StateGenerator stateGenerator = new StateGenerator(localTypeDescriptor);
-    PropertyState initialState = stateGenerator.generateDefaultState(localTypeDescriptor);
-    return ConfigurationDescriptor.builder()
-        .withState(initialState)
-        .withTypes(localTypeDescriptor)
-        .version(1)
-        .build();
+    return integrationConfiguration.setProperties(
+        // Create user input fields
+        textProperty("searchField")
+          .label("Search Field")
+          .instructionText("Please enter a name, address or phone number")
+          .description("This will find results near your IP address")
+          .placeholder("Grocery")
+          .isRequired(true)
+          .isExpressionable(true)
+          .build(),
+        booleanProperty("phoneToggle")
+          .label("Phone Number?")
+          .instructionText("Is your query a phone number?")
+          .build()
+    );
   }
 
   @Override
-  public IntegrationResponse execute(
-      ConfigurationDescriptor integrationConfigurationDescriptor,
-      ConfigurationDescriptor connectedSystemConfigurationDescriptor,
+  protected IntegrationResponse execute(
+      SimpleConfiguration integrationConfiguration,
+      SimpleConfiguration connectedSystemConfiguration,
       ExecutionContext executionContext) {
-    //State objects contain the user configured values in the connected system and integration
-    PropertyState connectedSystemState = connectedSystemConfigurationDescriptor.getRootState();
-    PropertyState integrationState = integrationConfigurationDescriptor.getRootState();
+    // The apiKey is stored in the Connected System and all integrations for that Connected Systems will share credentials
+    String apiKey = connectedSystemConfiguration.getValue(API_KEY);
 
-    //Retrieve apiKey from the connected system
-    String apiKey = (String)connectedSystemState.getValue(new PropertyPath("apiKey"));
-
-    //Retrieve user input information from the integration
-    String searchTerm = (String)integrationState.getValue(new PropertyPath("searchField"));
-    Boolean phoneToggle = (Boolean)integrationState.getValue(new PropertyPath("phoneToggle"));
+    // The search term and phonetoggle are both specific to the integration
+    String searchTerm = integrationConfiguration.getValue("searchField");
+    Boolean phoneToggle = integrationConfiguration.getValue("phoneToggle");
 
     IntegrationResponse.Builder integrationResponseBuilder;
     CloseableHttpResponse httpResponse = null;
