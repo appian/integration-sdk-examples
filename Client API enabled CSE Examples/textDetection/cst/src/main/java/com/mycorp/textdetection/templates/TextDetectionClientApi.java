@@ -15,13 +15,11 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
-import com.appiancorp.connectedsystems.templateframework.sdk.ClientApi;
-import com.appiancorp.connectedsystems.templateframework.sdk.ClientApiRequest;
+import com.appiancorp.connectedsystems.simplified.sdk.SimpleClientApi;
+import com.appiancorp.connectedsystems.simplified.sdk.SimpleClientApiRequest;
 import com.appiancorp.connectedsystems.templateframework.sdk.ClientApiResponse;
 import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
 import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyState;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
@@ -41,13 +39,10 @@ import com.mycorp.textdetection.OutputResponse;
  */
 
 @TemplateId(name = "TextDetectionClientApi")
-public class TextDetectionClientApi implements ClientApi {
+public class TextDetectionClientApi extends SimpleClientApi {
 
   private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().configure(
       DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-  // API Key location inside the Connected System configuration descriptor
-  private static final PropertyPath API_KEY_PATH = new PropertyPath(API_KEY);
 
   // Payload key in CSE request
   private static final String IMAGE_URL_KEY = "imageUrl";
@@ -79,15 +74,14 @@ public class TextDetectionClientApi implements ClientApi {
           "}";
 
   @Override
-  public ClientApiResponse execute(
-      ClientApiRequest request, ExecutionContext executionContext) {
-    PropertyState rootState = request.getConnectedSystemConfigDescriptor().getRootState();
+  protected ClientApiResponse execute(
+      SimpleClientApiRequest simpleClientApiRequest, ExecutionContext executionContext) {
 
     // API key to access Google Text Detection API
-    String apiKey = (String)rootState.getValue(API_KEY_PATH);
+    String apiKey = simpleClientApiRequest.getConnectedSystemConfiguration().getValue(API_KEY);
 
     // Image URL provided by the CSE
-    String imageUrl = (String)request.getPayload().get(IMAGE_URL_KEY);
+    String imageUrl = (String)simpleClientApiRequest.getPayload().get(IMAGE_URL_KEY);
 
     Map<String,Object> resultMap;
 
