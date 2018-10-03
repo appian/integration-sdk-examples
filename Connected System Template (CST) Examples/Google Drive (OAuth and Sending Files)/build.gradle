@@ -11,7 +11,8 @@ repositories {
 
 dependencies {
   testCompile group: 'junit', name: 'junit', version: '4.12'
-  compileOnly fileTree(dir: 'libs', include: '*.jar')
+  compileOnly fileTree(dir: 'libs', include: 'connected-systems-template-sdk*.jar')
+  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-template-sdk*.jar')
   compile 'org.apache.httpcomponents:httpclient:4.5.6'
   compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.2.5'
   compile 'com.google.apis:google-api-services-drive:v3-rev125-1.24.1'
