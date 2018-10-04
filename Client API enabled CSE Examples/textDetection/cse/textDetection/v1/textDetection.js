@@ -67,6 +67,10 @@ function handleError(response) {
 }
 
 function handleClientApiResponse(response) {
+    if (response.payload.error) {
+        Appian.Component.setValidations(response.payload.error);
+        return;
+    }
     // Clear any error messages
     Appian.Component.setValidations([]);
     var outputResponse = response.payload.outputResponse;
