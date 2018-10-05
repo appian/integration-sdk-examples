@@ -64,6 +64,11 @@ public class OutputResponse {
 
     AnnotationResponse.TextResponse textResponse = annotationResponse.responses.get(0);
 
+    AnnotationResponse.Error error = textResponse.error;
+    if (error != null) {
+      throw new RuntimeException(error.message);
+    }
+
     // Ignore the first annotation as only the words should be relayed back and not the sentence
     textResponse.textAnnotations.stream().skip(1).forEach(
         textAnnotation -> {

@@ -25,6 +25,11 @@ public class AnnotationResponse {
 
   public static class TextResponse {
     public List<TextAnnotation> textAnnotations;
+    public Error error;
   }
 
+  public static class Error {
+    public int code;
+    public String message;
+  }
 }
