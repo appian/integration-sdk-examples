@@ -1,5 +1,9 @@
-!/**/.idea/.compiler.xml
-!/**/.idea/.gradle.xml
+!/**/.idea/
+
+/**/.idea/*
+
+!/**/.idea/compiler.xml
+!/**/.idea/gradle.xml
 !/**/.idea/misc.xml
 
 .DS_Store
@@ -12,5 +16,4 @@
 /**/.settings/
 /**/bin/**
 /**/.project
-/**/.idea/**
 /**/github-cst.properties
