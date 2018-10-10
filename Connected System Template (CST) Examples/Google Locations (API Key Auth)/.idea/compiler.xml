@@ -2,10 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="api-key-cst_main" target="1.8" />
-      <module name="api-key-cst_test" target="1.8" />
-      <module name="hello-world-cst_main" target="1.8" />
-      <module name="hello-world-cst_test" target="1.8" />
       <module name="sample-api-key-cst_main" target="1.8" />
       <module name="sample-api-key-cst_test" target="1.8" />
     </bytecodeTargetLevel>

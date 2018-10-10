@@ -2,14 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="google-drive-cst_main" target="1.8" />
-      <module name="google-drive-cst_test" target="1.8" />
       <module name="google-drive-oauth-sample-cst_main" target="1.8" />
       <module name="google-drive-oauth-sample-cst_test" target="1.8" />
-      <module name="google-drive-sample-cst_main" target="1.8" />
-      <module name="google-drive-sample-cst_test" target="1.8" />
-      <module name="hello-world-cst_main" target="1.8" />
-      <module name="hello-world-cst_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

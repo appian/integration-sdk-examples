@@ -4,10 +4,6 @@
     <bytecodeTargetLevel>
       <module name="hello-world-cst_main" target="1.8" />
       <module name="hello-world-cst_test" target="1.8" />
-      <module name="sample-cst_main" target="1.8" />
-      <module name="sample-cst_test" target="1.8" />
-      <module name="sample.cst_main" target="1.8" />
-      <module name="sample.cst_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
