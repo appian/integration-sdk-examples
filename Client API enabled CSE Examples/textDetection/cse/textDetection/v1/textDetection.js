@@ -11,13 +11,13 @@ $(document).ready(function () {
     $('#detect').on("click", detect);
 
     Appian.Component.onNewValue(function (newValues) {
-      var url = newValues.imageUrl
+      var url = newValues.imageUrl;
       var csId = newValues.connectedSystem;
-      if (connectedSystem != csId) {
+      if (connectedSystem !== csId) {
         connectedSystem = csId;
       }
-      if (imageUrl != url) {
-        imageUrl = url
+      if (imageUrl !== url) {
+        imageUrl = url;
         loadImage();
       }
     });
