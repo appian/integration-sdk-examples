@@ -10,13 +10,16 @@ $(document).ready(function () {
 
     $('#detect').on("click", detect);
 
-    Appian.Component.onNewValue('imageUrl', url => {
-        imageUrl = url;
+    Appian.Component.onNewValue(function (newValues) {
+      var url = newValues.imageUrl
+      var csId = newValues.connectedSystem;
+      if (connectedSystem != csId) {
+        connectedSystem = csId;
+      }
+      if (imageUrl != url) {
+        imageUrl = url
         loadImage();
-    });
-
-    Appian.Component.onNewValue('connectedSystem', cs => {
-        connectedSystem = cs;
+      }
     });
 });
 
