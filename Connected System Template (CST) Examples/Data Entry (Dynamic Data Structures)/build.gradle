@@ -3,27 +3,27 @@ version '1.0'
 apply plugin: 'java'
 
 repositories {
-  flatDir {
-    dirs 'lib'
-  }
-//  Uncomment if using external libraries
   mavenCentral()
+  maven {
+    url "https://docs.appian.com/suite/help/18.3/downloadables/mvn"
+  }
 }
 
 dependencies {
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-template-sdk*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-template-sdk*.jar')
+  compile ('com.appian:connected-system-template-sdk-simplified:+') {
+    exclude group: 'com.appian', module: 'connected-system-template-sdk'
+  }
+  compileOnly 'com.appian:connected-system-template-sdk:+'
+
   compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'
   compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
   compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'
   compile group: 'commons-io', name: 'commons-io', version: '2.4'
-
-//  testCompile 'junit;junit;4.12'
 }
 
 
 jar {
-//  duplicatesStrategy = DuplicatesStrategy.FAIL
+  duplicatesStrategy = DuplicatesStrategy.FAIL
   into('META-INF/lib') {
     from(configurations.runtimeClasspath)
   }

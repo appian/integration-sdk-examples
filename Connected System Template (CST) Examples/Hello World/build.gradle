@@ -3,19 +3,17 @@ version '1.0'
 apply plugin: 'java'
 
 repositories {
-  flatDir {
-     dirs 'lib'
+  mavenCentral()
+  maven {
+    url "https://docs.appian.com/suite/help/18.3/downloadables/mvn"
   }
-//  Uncomment if using external libraries
-//  mavenCentral()
 }
 
 dependencies {
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-template-sdk*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-template-sdk*.jar')
-//  Example external dependency -- uncomment mavenCentral() above first
-//  testCompile 'junit;junit;4.12'
-//  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.0.1'
+  compile ('com.appian:connected-system-template-sdk-simplified:+') {
+    exclude group: 'com.appian', module: 'connected-system-template-sdk'
+  }
+  compileOnly 'com.appian:connected-system-template-sdk:+'
 }
 
 

@@ -3,17 +3,17 @@ version '1.0'
 apply plugin: 'java'
 
 repositories {
-  flatDir {
-     dirs 'lib'
-  }
-
-//  Using external libraries
   mavenCentral()
+  maven {
+    url "https://docs.appian.com/suite/help/18.3/downloadables/mvn"
+  }
 }
 
 dependencies {
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-template-sdk*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-template-sdk*.jar')
+  compile ('com.appian:connected-system-template-sdk-simplified:+') {
+    exclude group: 'com.appian', module: 'connected-system-template-sdk'
+  }
+  compileOnly 'com.appian:connected-system-template-sdk:+'
 
   implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
   implementation 'org.apache.httpcomponents:httpclient:4.5.6'
