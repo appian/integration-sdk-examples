@@ -1,0 +1,37 @@
+[
+  {
+    "name": "account",
+    "fields": [
+      {
+        "type": "INTEGER",
+        "id": "accountId",
+        "label": "Account ID"
+      },
+      {
+        "type": "TEXT",
+        "id": "accountHolder",
+        "label": "Account Holder"
+      }
+    ]
+  },
+  {
+    "name": "customer",
+    "fields": [
+      {
+        "type": "TEXT",
+        "id": "customerName",
+        "label": "Name"
+      },
+      {
+        "type": "INTEGER",
+        "id": "phoneNumber",
+        "label": "Phone Number"
+      },
+      {
+        "type": "BOOLEAN",
+        "id": "isCustomerMemberKey",
+        "label": "Is this customer a member yet?"
+      }
+    ]
+  }
+]

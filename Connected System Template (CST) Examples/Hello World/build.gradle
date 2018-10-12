@@ -1,0 +1,27 @@
+version '1.0'
+
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+  maven {
+    url "https://docs.appian.com/suite/help/18.3/downloadables/mvn"
+  }
+}
+
+dependencies {
+  compile ('com.appian:connected-system-template-sdk-simplified:+') {
+    exclude group: 'com.appian', module: 'connected-system-template-sdk'
+  }
+  compileOnly 'com.appian:connected-system-template-sdk:+'
+}
+
+
+jar {
+  duplicatesStrategy = DuplicatesStrategy.FAIL
+  into('META-INF/lib') {
+    from(configurations.runtimeClasspath)
+  }
+}
+
+

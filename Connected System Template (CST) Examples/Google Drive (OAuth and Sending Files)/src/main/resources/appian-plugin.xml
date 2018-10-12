@@ -1,0 +1,17 @@
+<appian-plugin name="My Corp Connected System - Google Drive OAuth Sample" key="google-drive-sample">
+
+  <plugin-info>
+    <description>My Corp Connected System - Google Drive Sample</description>
+    <vendor name="My Corporation" url="http://www.mycorp.com"/>
+    <version>1.0.0.0</version>
+    <application-version min="7.6.0.4"/>
+  </plugin-info>
+
+  <connected-system-template key="GoogleDriveSampleConnectedSystem" name="GoogleDriveSampleConnectedSystem"
+                             class="com.mycorp.helloworld.templates.GoogleDriveSampleConnectedSystemTemplate">
+
+    <integration-template key="GoogleDriveSendFileIntegrationTemplate" name="GoogleDriveSendFileIntegrationTemplate"
+                          class="com.mycorp.helloworld.templates.GoogleDriveSendFileIntegrationTemplate" />
+
+  </connected-system-template>
+</appian-plugin>
