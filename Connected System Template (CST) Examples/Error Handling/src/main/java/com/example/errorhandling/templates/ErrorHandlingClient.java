@@ -11,8 +11,8 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 
-public class ErrorHandlingClient implements AutoCloseable{
-  public static final String HTTPS_BASE_URL = "https://httpbin.org";
+public class ErrorHandlingClient implements AutoCloseable {
+  private static final String HTTPS_BASE_URL = "https://httpbin.org";
   private final CloseableHttpClient client;
 
   public ErrorHandlingClient(){
@@ -26,11 +26,11 @@ public class ErrorHandlingClient implements AutoCloseable{
 
   public CloseableHttpResponse execute(String statusCode) throws IOException, URISyntaxException {
     HttpGet getRequest = new HttpGet();
-    getRequest.setURI(getURI(statusCode));
+    getRequest.setURI(createURI(statusCode));
     return client.execute(getRequest);
   }
 
-  public static URI getURI (String statusCode) throws URISyntaxException {
+  public static URI createURI(String statusCode) throws URISyntaxException {
     URIBuilder uriBuilder = new URIBuilder(HTTPS_BASE_URL);
     String statusPath = String.format("/status/%s", statusCode);
     URI uri = uriBuilder.setPath(statusPath).build();
