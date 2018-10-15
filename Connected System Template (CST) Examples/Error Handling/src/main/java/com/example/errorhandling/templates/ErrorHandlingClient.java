@@ -26,11 +26,11 @@ public class ErrorHandlingClient implements AutoCloseable{
 
   public CloseableHttpResponse execute(String statusCode) throws IOException, URISyntaxException {
     HttpGet getRequest = new HttpGet();
-    getRequest.setURI(getURI(statusCode));
+    getRequest.setURI(createURI(statusCode));
     return client.execute(getRequest);
   }
 
-  public static URI getURI (String statusCode) throws URISyntaxException {
+  public static URI createURI(String statusCode) throws URISyntaxException {
     URIBuilder uriBuilder = new URIBuilder(HTTPS_BASE_URL);
     String statusPath = String.format("/status/%s", statusCode);
     URI uri = uriBuilder.setPath(statusPath).build();
