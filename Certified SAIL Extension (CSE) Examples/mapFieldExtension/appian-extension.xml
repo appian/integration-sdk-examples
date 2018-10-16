@@ -5,9 +5,8 @@
     <vendor name="Appian" url="http://www.appian.com" />
     <version>1.0</version>
   </extension-info>
-
-  <component name="Google Map Component" key="google.map">
-    <ruleName>mapField</ruleName>
+  <component ruleName="mapField" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
     <iconFile>google-maps.svg</iconFile>
     <parameter>
       <name>location</name>
