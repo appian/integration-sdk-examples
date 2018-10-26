@@ -25,6 +25,10 @@ jar {
   into('META-INF/lib') {
     from(configurations.runtimeClasspath)
   }
+
+  manifest {
+    attributes("Spring-Context": "*;publish-context:=false")
+  }
 }
 
 
