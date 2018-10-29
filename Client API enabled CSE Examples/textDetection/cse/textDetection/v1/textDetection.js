@@ -26,7 +26,7 @@ $(document).ready(function () {
 // Utility methods
 function loadImage() {
     $('#detect').prop("disabled", true);
-    $('#canvas').css('backgroundImage', `url(${imageUrl})`);
+    $('#canvas').css('backgroundImage', 'url(' + imageUrl + ')');
     canvasMaintenance();
 }
 
@@ -85,12 +85,11 @@ function handleClientApiResponse(response) {
     ctx.lineWidth = 3;
 
     // Draw the bounding boxes around the text found
-    outputResponse.boundingBoxes.forEach(
-        boundingBox => ctx.strokeRect(
+    outputResponse.boundingBoxes.forEach(function(boundingBox) {
+        ctx.strokeRect(
             boundingBox.x,
             boundingBox.y,
             boundingBox.width,
-            boundingBox.height
-        )
-    );
+            boundingBox.height);
+    });
 }
