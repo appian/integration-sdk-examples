@@ -4,16 +4,12 @@ apply plugin: 'java'
 
 repositories {
   mavenCentral()
-  maven {
-    url "https://docs.appian.com/suite/help/18.3/downloadables/mvn"
-  }
 }
 
 dependencies {
-  compile ('com.appian:connected-system-template-sdk-simplified:+') {
-    exclude group: 'com.appian', module: 'connected-system-template-sdk'
-  }
-  compileOnly 'com.appian:connected-system-template-sdk:+'
+
+  compileOnly fileTree(dir: 'libs', include: 'connected-systems-*.jar')
+  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-core-*.jar')
 
   compile 'org.apache.httpcomponents:httpclient:4.5.6'
 }
