@@ -1,9 +1,9 @@
 package com.example.errorhandling.templates;
 
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleConnectedSystemTemplate;
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.simplified.sdk.SimpleConnectedSystemTemplate;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
 
 @TemplateId(name="ErrorHandlingConnectedSystemTemplate")
 public class ErrorHandlingConnectedSystemTemplate extends SimpleConnectedSystemTemplate {

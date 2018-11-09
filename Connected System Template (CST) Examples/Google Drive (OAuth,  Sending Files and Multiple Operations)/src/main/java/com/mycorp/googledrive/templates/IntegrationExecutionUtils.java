@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationError;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
-import com.appiancorp.connectedsystems.templateframework.sdk.oauth.ExpiredTokenException;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.templateframework.sdk.IntegrationError;
+import com.appian.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appian.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appian.connectedsystems.templateframework.sdk.oauth.ExpiredTokenException;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.services.drive.model.File;
 import com.google.common.base.Stopwatch;

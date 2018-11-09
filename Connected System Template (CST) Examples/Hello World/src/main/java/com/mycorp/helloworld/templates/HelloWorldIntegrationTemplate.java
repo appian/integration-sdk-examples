@@ -5,15 +5,15 @@ import static com.mycorp.helloworld.templates.HelloWorldConnectedSystemTemplate.
 import java.util.HashMap;
 import java.util.Map;
 
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
-import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
-import com.appiancorp.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
+import com.appian.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyPath;
+import com.appian.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appian.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
+import com.appian.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
 
 // Must provide an integration id. This value need only be unique for this connected system
 @TemplateId(name="HelloWorldIntegrationTemplate")
