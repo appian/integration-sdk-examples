@@ -10,19 +10,19 @@ import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.IntegrationResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.Choice;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyDescriptorBuilder;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.PropertyPath;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.RefreshPolicy;
-import com.appiancorp.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
-import com.appiancorp.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
+import com.appian.connectedsystems.simplified.sdk.SimpleIntegrationTemplate;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.IntegrationResponse;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.templateframework.sdk.configuration.Choice;
+import com.appian.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
+import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyDescriptor;
+import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyDescriptorBuilder;
+import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyPath;
+import com.appian.connectedsystems.templateframework.sdk.configuration.RefreshPolicy;
+import com.appian.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
+import com.appian.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

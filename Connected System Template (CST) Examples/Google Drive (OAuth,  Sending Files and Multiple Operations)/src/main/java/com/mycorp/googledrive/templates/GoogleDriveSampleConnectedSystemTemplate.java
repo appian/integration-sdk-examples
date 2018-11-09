@@ -1,10 +1,10 @@
 package com.mycorp.googledrive.templates;
 
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.simplified.sdk.oauth.SimpleOAuthConnectedSystemTemplate;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
-import com.appiancorp.connectedsystems.templateframework.sdk.oauth.OAuthConfigurationData;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.simplified.sdk.oauth.SimpleOAuthConnectedSystemTemplate;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.templateframework.sdk.oauth.OAuthConfigurationData;
 
 @TemplateId(name = "GoogleDriveSampleConnectedSystemTemplate", majorVersion = 2)
 public class GoogleDriveSampleConnectedSystemTemplate extends SimpleOAuthConnectedSystemTemplate {
