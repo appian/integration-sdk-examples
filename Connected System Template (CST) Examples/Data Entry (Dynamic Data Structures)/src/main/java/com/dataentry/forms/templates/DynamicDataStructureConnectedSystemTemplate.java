@@ -1,9 +1,9 @@
 package com.dataentry.forms.templates;
 
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleConnectedSystemTemplate;
-import com.appiancorp.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.simplified.sdk.SimpleConnectedSystemTemplate;
+import com.appian.connectedsystems.simplified.sdk.configuration.SimpleConfiguration;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
 
 @TemplateId(name="DynamicDataStructureConnectedSystemTemplate")
 public class DynamicDataStructureConnectedSystemTemplate extends SimpleConnectedSystemTemplate {
