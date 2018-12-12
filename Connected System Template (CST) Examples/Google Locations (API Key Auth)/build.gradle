@@ -7,13 +7,12 @@ repositories {
 }
 
 dependencies {
-
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-core-*.jar')
-
-  testCompile group: 'junit', name: 'junit', version: '4.12'
-  compile 'org.apache.httpcomponents:httpclient:4.5.6'
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+  compileOnly 'com.appian:connected-systems-core:0.1.0'
+  implementation 'com.appian:connected-systems-client:0.1.0'
+  implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'com.appian:connected-systems-core:0.1.0'
 }
 
 

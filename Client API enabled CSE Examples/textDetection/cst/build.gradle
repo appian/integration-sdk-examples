@@ -7,13 +7,12 @@ repositories {
 }
 
 dependencies {
-  
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-core-*.jar')
-
+  compileOnly 'com.appian:connected-systems-core:0.1.0'
+  implementation 'com.appian:connected-systems-client:0.1.0'
   implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.7'
   implementation 'org.apache.httpcomponents:httpclient:4.5.6'
   implementation 'com.google.guava:guava:26.0-jre'
+  testImplementation 'com.appian:connected-systems-core:0.1.0'
 }
 
 jar {

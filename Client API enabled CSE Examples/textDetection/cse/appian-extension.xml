@@ -9,6 +9,7 @@
   <!-- Add a new component with every version you create -->
   <!-- This v1.0.0 component maps to the v1 folder -->
   <component ruleName="textDetection" key="text.detection.component" version="1.0.0">
+    <supportedUserAgents>chrome</supportedUserAgents>
     <iconFile>textDetection.svg</iconFile>
     <parameter>
       <name>imageUrl</name>

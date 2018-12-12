@@ -7,14 +7,13 @@ repositories {
 }
 
 dependencies {
-
-  compileOnly fileTree(dir: 'libs', include: 'connected-systems-*.jar')
-  implementation fileTree(dir: 'libs', include: '*.jar', exclude: 'connected-systems-core-*.jar')
-
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
-  compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.6'
-  compile group: 'commons-io', name: 'commons-io', version: '2.4'
+  compileOnly 'com.appian:connected-systems-core:0.1.0'
+  implementation 'com.appian:connected-systems-client:0.1.0'
+  implementation 'com.fasterxml.jackson.core:jackson-core:2.9.6'
+  implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
+  implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.6'
+  implementation 'commons-io:commons-io:2.4'
+  testImplementation 'com.appian:connected-systems-core:0.1.0'
 }
 
 
