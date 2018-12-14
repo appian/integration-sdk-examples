@@ -15,11 +15,11 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleClientApi;
-import com.appiancorp.connectedsystems.simplified.sdk.SimpleClientApiRequest;
-import com.appiancorp.connectedsystems.templateframework.sdk.ClientApiResponse;
-import com.appiancorp.connectedsystems.templateframework.sdk.ExecutionContext;
-import com.appiancorp.connectedsystems.templateframework.sdk.TemplateId;
+import com.appian.connectedsystems.simplified.sdk.SimpleClientApi;
+import com.appian.connectedsystems.simplified.sdk.SimpleClientApiRequest;
+import com.appian.connectedsystems.templateframework.sdk.ClientApiResponse;
+import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
+import com.appian.connectedsystems.templateframework.sdk.TemplateId;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.ImmutableMap;
