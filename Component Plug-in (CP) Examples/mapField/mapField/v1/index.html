@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='./map.css'></link>
+</head>
+
+<body>
+  <div id='map-container'></div>
+  <script src='APPIAN_JS_SDK_URI'></script>
+  <script>
+    let mapState = {};
+    let newKey, newLocation, currentKey;
+    let mapsApiScriptId = 'google-maps-api-script';
+
+    // Handle a new user input location from SAIL.
+    Appian.Component.onNewValue(function (newValues) {
+      newKey = newValues.key;
+      newLocation = newValues.location;
+
+      if (newKey && currentKey !== newKey) {
+        let oldScript = document.getElementById(mapsApiScriptId);
+        if (oldScript) {
+          oldScript.parentElement.removeChild(oldScript);
+          document.getElementById('map-container').innerHTML = ''
+          google = null;
+          mapState = {};
+        }
+
+        currentKey = newKey;
+        let s = document.createElement('script');
+        s.setAttribute('id', mapsApiScriptId)
+        s.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=' + newKey + '&callback=initMap');
+        document.body.appendChild(s);
+      }
+      if (mapState.scriptLoaded && currentLocation !== newLocation) {
+        changeLocation(newLocation);
+      }
+    });
+
+    function initMap() {
+      mapState.scriptLoaded = true;
+      changeLocation(newLocation)
+    }
+
+    function changeLocation(newLocation) {
+      currentLocation = newLocation;
+      // Obtain coordinates for user input location
+      mapState.geocoder = mapState.geocoder || new google.maps.Geocoder();
+      mapState.geocoder.geocode({ 'address': newLocation }, function (results, status) {
+        let latLng = results[0].geometry.location;
+        if (mapState.map) {
+          mapState.map.setCenter(latLng);
+        } else {
+          renderMap(latLng);
+        }
+      });
+    }
+
+    function renderMap(latLng) {
+      // Render a map at the requested coordinates
+      mapState.container = document.getElementById('map-container');
+      mapState.map = new google.maps.Map(mapState.container, {
+        zoom: 12,
+        center: latLng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      mapState.map.addListener('click', function (event) {
+        if (mapState.pin) {
+          mapState.pin.setMap(null); // Remove previous pin
+        }
+
+        // Add pin with Appian accent color to map
+        var pinLatLng = event.latLng;
+        mapState.pin = new google.maps.Marker({
+          map: mapState.map,
+          position: pinLatLng,
+          icon: {
+            fillColor: Appian.getAccentColor(),
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8,
+            fillOpacity: 1,
+            strokeWeight: 1
+          }
+        });
+
+        // Share pin coordinates with SAIL
+        Appian.Component.saveValue('pin', {
+          latitude: pinLatLng.lat(),
+          longitude: pinLatLng.lng()
+        });
+      });
+    }
+  </script>
+</body>
+</html>
