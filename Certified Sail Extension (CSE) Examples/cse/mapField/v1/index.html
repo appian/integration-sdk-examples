@@ -9,46 +9,49 @@
   <div id="map-container"></div>
   <script src='APPIAN_JS_SDK_URI'></script>
   <script>
-    var geocoder, currentLocation, map, pin, currentKey, scriptLoaded = false;
-    var newKey, newLocation;
+    var state = {};
+    var newKey, newLocation, currentKey;
+    var scriptLoaded = false, scriptId = 'scriptTag';
 
     // Handle a new user input location from SAIL.
     Appian.Component.onNewValue(function (newValues) {
       newKey = newValues.key;
       newLocation = newValues.location;
 
-      if (currentKey != newKey && newKey != "") {
-        if (currentKey == undefined) {
-          currentKey = newKey;
-          var s = document.createElement( 'script' );
-          s.setAttribute('src', "https://maps.googleapis.com/maps/api/js?key=" + newKey + "&callback=initMap");
-          document.body.appendChild( s );
-        } else {
-          Appian.Component.setValidations(["Changing the key is not supported"]);
-          document.getElementById('map-container').innerHTML = "";
-          return;
+      if (currentKey !== newKey && newKey !== "") {
+        scriptLoaded = false;
+        var oldScript = document.getElementById(scriptId);
+        if (oldScript) {
+          oldScript.parentElement.removeChild(oldScript);
+          document.getElementById("map-container").innerHTML = ""
+          google = null;
+          state = {};
         }
+
+        currentKey = newKey;
+        var s = document.createElement( 'script' );
+        s.setAttribute('id', scriptId)
+        s.setAttribute('src', "https://maps.googleapis.com/maps/api/js?key=" + newKey + "&callback=initMap");
+        document.body.appendChild(s);
       }
-      if (scriptLoaded && currentLocation != newLocation) {
+      if (scriptLoaded && currentLocation !== newLocation) {
         changeLocation(newLocation);
       }
     });
 
     function initMap() {
       scriptLoaded = true;
-      if (currentLocation != newLocation) {
-        changeLocation(newLocation);
-      }
+      changeLocation(newLocation)
     }
 
     function changeLocation(newLocation) {
       currentLocation = newLocation;
       // Obtain coordinates for user input location
-      geocoder = geocoder || new google.maps.Geocoder();
-      geocoder.geocode({ 'address': newLocation }, function (results, status) {
+      state.geocoder = state.geocoder || new google.maps.Geocoder();
+      state.geocoder.geocode({ 'address': newLocation }, function (results, status) {
         var latLng = results[0].geometry.location;
-        if (map) {
-          map.setCenter(latLng);
+        if (state.map) {
+          state.map.setCenter(latLng);
         } else {
           renderMap(latLng);
         }
@@ -57,24 +60,30 @@
 
     function renderMap(latLng) {
       // Render a map at the requested coordinates
-      var container = document.getElementById('map-container');
-      map = new google.maps.Map(container, {
+      state.container = document.getElementById('map-container');
+      state.map = new google.maps.Map(state.container, {
         zoom: 12,
         center: latLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      map.addListener('click', function (event) {
-        if (pin) {
-          pin.setMap(null); // Remove previous pin
+      state.map.addListener('click', function (event) {
+        if (state.pin) {
+          state.pin.setMap(null); // Remove previous pin
         }
 
         // Add pin with Appian accent color to map
         var pinLatLng = event.latLng;
-        pin = new google.maps.Marker({
-          map: map,
+        state.pin = new google.maps.Marker({
+          map: state.map,
           position: pinLatLng,
-          icon: { fillColor: Appian.getAccentColor(), path: google.maps.SymbolPath.CIRCLE, scale: 8, fillOpacity: 1, strokeWeight: 1 }
+          icon: {
+            fillColor: Appian.getAccentColor(),
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 8,
+            fillOpacity: 1,
+            strokeWeight: 1
+          }
         });
 
         // Share pin coordinates with SAIL
