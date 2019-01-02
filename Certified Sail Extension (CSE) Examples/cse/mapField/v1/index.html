@@ -2,56 +2,55 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="./map.css"></link>
+  <link rel='stylesheet' href='./map.css'></link>
 </head>
 
 <body>
-  <div id="map-container"></div>
+  <div id='map-container'></div>
   <script src='APPIAN_JS_SDK_URI'></script>
   <script>
-    var state = {};
+    var mapState = {};
     var newKey, newLocation, currentKey;
-    var scriptLoaded = false, scriptId = 'scriptTag';
+    var scriptId = 'scriptTag';
 
     // Handle a new user input location from SAIL.
     Appian.Component.onNewValue(function (newValues) {
       newKey = newValues.key;
       newLocation = newValues.location;
 
-      if (currentKey !== newKey && newKey !== "") {
-        scriptLoaded = false;
+      if (newKey && currentKey !== newKey) {
         var oldScript = document.getElementById(scriptId);
         if (oldScript) {
           oldScript.parentElement.removeChild(oldScript);
-          document.getElementById("map-container").innerHTML = ""
+          document.getElementById('map-container').innerHTML = ''
           google = null;
-          state = {};
+          mapState = {};
         }
 
         currentKey = newKey;
-        var s = document.createElement( 'script' );
+        var s = document.createElement('script');
         s.setAttribute('id', scriptId)
-        s.setAttribute('src', "https://maps.googleapis.com/maps/api/js?key=" + newKey + "&callback=initMap");
+        s.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=' + newKey + '&callback=initMap');
         document.body.appendChild(s);
       }
-      if (scriptLoaded && currentLocation !== newLocation) {
+      if (mapState.scriptLoaded && currentLocation !== newLocation) {
         changeLocation(newLocation);
       }
     });
 
     function initMap() {
-      scriptLoaded = true;
+      mapState.scriptLoaded = true;
       changeLocation(newLocation)
     }
 
     function changeLocation(newLocation) {
       currentLocation = newLocation;
       // Obtain coordinates for user input location
-      state.geocoder = state.geocoder || new google.maps.Geocoder();
-      state.geocoder.geocode({ 'address': newLocation }, function (results, status) {
+      mapState.geocoder = mapState.geocoder || new google.maps.Geocoder();
+      mapState.geocoder.geocode({ 'address': newLocation }, function (results, status) {
         var latLng = results[0].geometry.location;
-        if (state.map) {
-          state.map.setCenter(latLng);
+        if (mapState.map) {
+          mapState.map.setCenter(latLng);
         } else {
           renderMap(latLng);
         }
@@ -60,22 +59,22 @@
 
     function renderMap(latLng) {
       // Render a map at the requested coordinates
-      state.container = document.getElementById('map-container');
-      state.map = new google.maps.Map(state.container, {
+      mapState.container = document.getElementById('map-container');
+      mapState.map = new google.maps.Map(mapState.container, {
         zoom: 12,
         center: latLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
 
-      state.map.addListener('click', function (event) {
-        if (state.pin) {
-          state.pin.setMap(null); // Remove previous pin
+      mapState.map.addListener('click', function (event) {
+        if (mapState.pin) {
+          mapState.pin.setMap(null); // Remove previous pin
         }
 
         // Add pin with Appian accent color to map
         var pinLatLng = event.latLng;
-        state.pin = new google.maps.Marker({
-          map: state.map,
+        mapState.pin = new google.maps.Marker({
+          map: mapState.map,
           position: pinLatLng,
           icon: {
             fillColor: Appian.getAccentColor(),

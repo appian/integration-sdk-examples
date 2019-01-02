@@ -3,8 +3,7 @@
   <extension-info>
     <description>Provides a Map SAIL Extension backed by Google Maps</description>
     <vendor name="Appian" url="http://www.appian.com" />
-    <support supported="true" phone="703-442-8844" email="support@appian.com"
-             url="https://community.appian.com"/>
+    <support supported="true" phone="703-442-8844" email="support@appian.com" url="https://community.appian.com"/>
     <version>1.0</version>
   </extension-info>
 
