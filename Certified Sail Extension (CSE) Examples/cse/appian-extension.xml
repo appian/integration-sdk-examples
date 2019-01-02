@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appian-extension name="Map SAIL Extension" key="sample.map">
+  <extension-info>
+    <description>Provides a Map SAIL Extension backed by Google Maps</description>
+    <vendor name="Appian" url="http://www.appian.com" />
+    <support supported="true" phone="703-442-8844" email="support@appian.com"
+             url="https://community.appian.com"/>
+    <version>1.0</version>
+  </extension-info>
+
+  <component rule-name="mapField" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
+    <icon-file>google-maps.svg</icon-file>
+    <parameter>
+      <name>key</name>
+      <category>input-only</category>
+      <type>Text</type>
+    </parameter>
+    <parameter>
+      <name>location</name>
+      <category>input-only</category>
+      <type>Text</type>
+    </parameter>
+    <parameter>
+      <name>pin</name>
+      <category>event</category>
+    </parameter>
+    <html-entry-point>index.html</html-entry-point>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+  </component>
+</appian-extension>
