@@ -19,4 +19,26 @@
     <integration-template key="GoogleDriveCreateFolderIntegrationTemplate" name="GoogleDriveCreateFolderIntegrationTemplate"
                           class="com.mycorp.googledrive.templates.GoogleDriveCreateFolderIntegrationTemplate" />
   </connected-system-template>
+
+
+  <!--&lt;!&ndash; Version of the connected system. Should migrate the integrations&ndash;&gt;-->
+  <!--<connected-system-template key="GoogleDriveSampleConnectedSystem2" name="GoogleDriveSampleConnectedSystem"-->
+                             <!--class="com.mycorp.googledrive.version2.GoogleDriveSampleConnectedSystemTemplate">-->
+    <!--<integration-template key="GoogleDriveSendFileIntegrationTemplate" name="GoogleDriveSendFileIntegrationTemplate"-->
+                          <!--class="com.mycorp.googledrive.version2.GoogleDriveSendFileIntegrationTemplate" />-->
+
+    <!--<integration-template key="GoogleDriveCreateFolderIntegrationTemplate" name="GoogleDriveCreateFolderIntegrationTemplate"-->
+                          <!--class="com.mycorp.googledrive.version2.GoogleDriveCreateFolderIntegrationTemplate" />-->
+  <!--</connected-system-template>-->
+
+  <!--&lt;!&ndash; Version of the connected system. That is not Oauth&ndash;&gt;-->
+
+  <!--<connected-system-template key="GoogleDriveSampleConnectedSystem3" name="GoogleDriveSampleConnectedSystem"-->
+                             <!--class="com.mycorp.googledrive.version3.GoogleDriveSampleConnectedSystemTemplate">-->
+    <!--<integration-template key="GoogleDriveSendFileIntegrationTemplate" name="GoogleDriveSendFileIntegrationTemplate"-->
+                          <!--class="com.mycorp.googledrive.version3.GoogleDriveSendFileIntegrationTemplate" />-->
+
+    <!--<integration-template key="GoogleDriveCreateFolderIntegrationTemplate" name="GoogleDriveCreateFolderIntegrationTemplate"-->
+                          <!--class="com.mycorp.googledrive.version3.GoogleDriveCreateFolderIntegrationTemplate" />-->
+  <!--</connected-system-template>-->
 </appian-plugin>

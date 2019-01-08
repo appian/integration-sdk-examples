@@ -1,4 +1,4 @@
-package com.mycorp.googledrive.templates;
+package com.mycorp.googledrive.version2;
 
 import java.io.IOException;
 import java.util.Map;
@@ -20,6 +20,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.common.base.Stopwatch;
+import com.mycorp.googledrive.templates.IntegrationExecutionUtils;
 
 @TemplateId(name = "GoogleDriveSendFileIntegrationTemplate")
 public class GoogleDriveSendFileIntegrationTemplate extends SimpleIntegrationTemplate {
@@ -35,10 +36,10 @@ public class GoogleDriveSendFileIntegrationTemplate extends SimpleIntegrationTem
       ExecutionContext executionContext) {
     return integrationConfiguration.setProperties(
         //Document Property allows the user to select a document in Appian to send to Google Drive
-        documentProperty(FILE_KEY).label("File").isRequired(true).build(),
+        documentProperty(FILE_KEY + "2").label("File Version 2 should not have old values when upgraded").isRequired(true).build(),
         //The same key (NAME_KEY) is used in the other template to create a textProperty for folder name,
         //therefore when you toggle between operations, the value you enter in this field will persist.
-        textProperty(NAME_KEY).label("File Name")
+        textProperty(NAME_KEY + "2").label("File Name Version 2 should not have old values when upgraded")
             .instructionText("If left blank, the document's Appian name will be used instead")
             .build());
   }

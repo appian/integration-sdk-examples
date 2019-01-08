@@ -1,4 +1,4 @@
-package com.mycorp.googledrive.templates;
+package com.mycorp.googledrive.version2;
 
 import static com.mycorp.googledrive.templates.GoogleDriveSendFileIntegrationTemplate.NAME_KEY;
 
@@ -20,6 +20,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.drive.model.File;
 import com.google.common.base.Stopwatch;
+import com.mycorp.googledrive.templates.IntegrationExecutionUtils;
 
 @TemplateId(name="GoogleDriveCreateFolderIntegrationTemplate")
 public class GoogleDriveCreateFolderIntegrationTemplate extends SimpleIntegrationTemplate {
@@ -36,7 +37,7 @@ public class GoogleDriveCreateFolderIntegrationTemplate extends SimpleIntegratio
         //The same key (NAME_KEY) is used in the other template to create a textProperty for document name,
         // therefore when you toggle between operations, the value you enter in this field will persist.
         textProperty(NAME_KEY)
-            .label("Folder Name")
+            .label("Folder Name Version 2 should have old values when upgraded")
             .isRequired(true)
             .build()
     );
