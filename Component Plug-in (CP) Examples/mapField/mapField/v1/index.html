@@ -10,14 +10,17 @@
   <script src='APPIAN_JS_SDK_URI'></script>
   <script>
     let mapState = {};
-    let newKey, newLocation, currentKey;
+    let currentLocation = '';
+    let newKey, currentKey, newLocation;
     let mapsApiScriptId = 'google-maps-api-script';
 
     // Handle a new user input location from SAIL.
     Appian.Component.onNewValue(function (newValues) {
       newKey = newValues.key;
       newLocation = newValues.location;
-
+      if (newLocation && !(currentKey || newKey)) {
+        Appian.Component.setValidations('The API Key provided is empty. Please update the parameter "Google API Key" with a valid key.');
+      }
       if (newKey && currentKey !== newKey) {
         let oldScript = document.getElementById(mapsApiScriptId);
         if (oldScript) {
@@ -39,22 +42,38 @@
     });
 
     function initMap() {
+      // Clear the validation if a valid API key has been added but no location is present yet
+      Appian.Component.setValidations('');
       mapState.scriptLoaded = true;
-      changeLocation(newLocation)
+      changeLocation(newLocation);
     }
 
+    // Global function required by Google Maps API for catching authentication failures
+    // See https://developers.google.com/maps/documentation/javascript/events#auth-errors for more information
+    function gm_authFailure() {
+      Appian.Component.setValidations('The API Key provided is invalid. Please update the parameter "Google API Key" with a valid key.');
+    };
+
     function changeLocation(newLocation) {
-      currentLocation = newLocation;
-      // Obtain coordinates for user input location
-      mapState.geocoder = mapState.geocoder || new google.maps.Geocoder();
-      mapState.geocoder.geocode({ 'address': newLocation }, function (results, status) {
-        let latLng = results[0].geometry.location;
-        if (mapState.map) {
-          mapState.map.setCenter(latLng);
-        } else {
-          renderMap(latLng);
-        }
-      });
+      if (newLocation) {
+        currentLocation = newLocation;
+        // Obtain coordinates for user input location
+        mapState.geocoder = mapState.geocoder || new google.maps.Geocoder();
+        mapState.geocoder.geocode({ 'address': newLocation }, function (results, status) {
+          if (status === 'OK') {
+            // Clear out any existing validations
+            Appian.Component.setValidations('');
+            let latLng = results[0].geometry.location;
+            if (mapState.map) {
+              mapState.map.setCenter(latLng);
+            } else {
+              renderMap(latLng);
+            }
+          } else if (status === 'ZERO_RESULTS') {
+            Appian.Component.setValidations('No matching location was found for input: "' + newLocation + '". Valid input must be a country, city, full address, or anything the Google Geocoding API supports (https://developers.google.com/maps/documentation/geocoding/intro).');
+          }
+        });
+      }
     }
 
     function renderMap(latLng) {
