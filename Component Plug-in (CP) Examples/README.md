@@ -8,12 +8,19 @@
 
 ## Sample interface
 ```
-mapField(
-    label: "Map",
-    labelPosition: "ABOVE",
-    validations: {},
-    height: "AUTO",
-    key: <YOUR_API_KEY>,
-    location: "America"
+load(
+  local!pins,
+  {
+    a!textField(value: local!pins, label: "Pins", saveInto: local!pins),
+    mapField(
+      label: "Map",
+      labelPosition: "ABOVE",
+      validations: {},
+      height: "AUTO",
+      key: <YOUR_API_KEY>,
+      location: "",
+      pin: a!save(target: local!pins, fn!append(local!pins, save!value))
+    )
+  }
 )
 ```

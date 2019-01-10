@@ -1,8 +1,7 @@
 ## How to install
-* Run the gradle JAR task
-* Drop the jar into the plugin directory
-* Highlight all files under the cse directory and compress them into a zip
-* Drop the zip into the plugin directory
+* Run the gradle JAR task (typically `./gradlew build`)
+* Drop the generated jar (which will be located in `cst/build/libs/`) into the plugin directory of your Appian install `<AE_ROOT>/_admin/plugins`
+* See https://github.com/appian/integration-sdk-examples/blob/master/Component%20Plug-in%20(CP)%20Examples/README.md for installation instructions for the Component Plug-in
 
 ## Sample interface
 ```
