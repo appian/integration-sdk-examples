@@ -38,8 +38,8 @@ public class IntegrationExecutionUtils {
    * Creates response diagnostics for both {@link GoogleDriveSendFileIntegrationTemplate} and
    * {@link GoogleDriveCreateFolderIntegrationTemplate}
    */
-  public static Map<String,String> getResponseDiagnostics(File responseFile) {
-    Map<String,String> responseDiagnostic = new HashMap<>();
+  public static Map<String,Object> getResponseDiagnostics(File responseFile) {
+    Map<String,Object> responseDiagnostic = new HashMap<>();
     responseDiagnostic.put("Name", responseFile.getName());
     responseDiagnostic.put("ID", responseFile.getId());
     responseDiagnostic.put("MIME Type", responseFile.getMimeType());

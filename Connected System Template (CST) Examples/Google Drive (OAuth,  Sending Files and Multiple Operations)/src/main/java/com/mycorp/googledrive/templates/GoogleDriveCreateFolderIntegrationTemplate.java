@@ -77,7 +77,7 @@ public class GoogleDriveCreateFolderIntegrationTemplate extends SimpleIntegratio
     Map<String,Object> requestDiagnostics = getRequestDiagnostics(
         connectedSystemConfiguration, integrationConfiguration);
 
-    Map<String, String> diagnosticResponse = IntegrationExecutionUtils.getResponseDiagnostics(responseFile);
+    Map<String,Object> diagnosticResponse = IntegrationExecutionUtils.getResponseDiagnostics(responseFile);
     IntegrationDesignerDiagnostic diagnostic = diagnosticBuilder
         .addExecutionTimeDiagnostic(stopwatch.stop().elapsed(TimeUnit.MILLISECONDS))
         .addRequestDiagnostic(requestDiagnostics)

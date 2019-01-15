@@ -97,7 +97,7 @@ public class LocationSearchIntegrationTemplate extends SimpleIntegrationTemplate
 
       //Gets request and response information to display to help user diagnose problems with the integration
       Map<String,Object> requestDiagnostic = getRequestDiagnostic(apiKey, searchTerm, phoneToggle);
-      Map<String,String> responseDiagnostic = getResponseDiagnostic(jsonResponse);
+      Map<String,Object> responseDiagnostic = getResponseDiagnostic(jsonResponse);
       IntegrationDesignerDiagnostic integrationDesignerDiagnostic = IntegrationDesignerDiagnostic.builder()
           .addRequestDiagnostic(requestDiagnostic)
           .addResponseDiagnostic(responseDiagnostic)
@@ -123,8 +123,8 @@ public class LocationSearchIntegrationTemplate extends SimpleIntegrationTemplate
     return diagnostic;
   }
 
-  private Map<String, String> getResponseDiagnostic(String jsonString) {
-    Map<String, String> diagnostic = new HashMap<>();
+  private Map<String, Object> getResponseDiagnostic(String jsonString) {
+    Map<String, Object> diagnostic = new HashMap<>();
     diagnostic.put("Raw Response", jsonString);
     return diagnostic;
   }

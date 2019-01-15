@@ -76,7 +76,7 @@ public class GoogleDriveSendFileIntegrationTemplate extends SimpleIntegrationTem
     long elapsed = stopwatch.stop().elapsed(TimeUnit.MILLISECONDS);
     Map<String,Object> requestDiagnostics = getRequestDiagnostics(document, connectedSystemConfiguration,
         integrationConfiguration);
-    Map<String,String> responseDiagnostics = IntegrationExecutionUtils.getResponseDiagnostics(responseFile);
+    Map<String,Object> responseDiagnostics = IntegrationExecutionUtils.getResponseDiagnostics(responseFile);
 
     IntegrationDesignerDiagnostic diagnostic = diagnosticBuilder.addExecutionTimeDiagnostic(elapsed)
         .addRequestDiagnostic(requestDiagnostics)

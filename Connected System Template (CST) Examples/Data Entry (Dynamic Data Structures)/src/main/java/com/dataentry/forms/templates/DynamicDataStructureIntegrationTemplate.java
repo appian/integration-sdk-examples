@@ -3,6 +3,7 @@ package com.dataentry.forms.templates;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +17,6 @@ import com.appian.connectedsystems.templateframework.sdk.ExecutionContext;
 import com.appian.connectedsystems.templateframework.sdk.IntegrationResponse;
 import com.appian.connectedsystems.templateframework.sdk.TemplateId;
 import com.appian.connectedsystems.templateframework.sdk.configuration.Choice;
-import com.appian.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
 import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyDescriptor;
 import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyDescriptorBuilder;
 import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyPath;
@@ -150,10 +150,9 @@ public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTe
    */
   private TextPropertyDescriptor createFormDropdown(JsonNode dataTypes) {
     Choice[] dataTypeChoices = createDataTypeChoices(dataTypes);
-    return textProperty(FORM_DROPDOWN_KEY)
+    return dropdownProperty(FORM_DROPDOWN_KEY, Arrays.asList(dataTypeChoices))
         .label(FORMS_DROPDOWN_LABEL)
         .instructionText(FormDropdownInstructionText)
-        .choices(dataTypeChoices)
         //Important: This triggers the Integration Template to re-render when the choice selection changes
         .refresh(RefreshPolicy.ALWAYS)
         .isRequired(true)
@@ -167,8 +166,8 @@ public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTe
       dataTypeNames.add(name);
     }
     return dataTypeNames.stream()
-        .map(dataTypeName -> DomainSpecificLanguage
-            .choice()
+        .map(dataTypeName -> Choice
+            .builder()
             .name(dataTypeName)
             .value(dataTypeName)
             .build()).toArray(Choice[]::new);
@@ -190,11 +189,11 @@ public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTe
 
   private PropertyDescriptorBuilder parsePropertyDescriptorType(String type) {
     if (SUPPORTED_PROPERTY_TYPE.TEXT.name().equals(type)) {
-      return DomainSpecificLanguage.textProperty();
+      return textProperty("");
     } else if (SUPPORTED_PROPERTY_TYPE.INTEGER.name().equals(type)) {
-      return DomainSpecificLanguage.integerProperty();
+      return integerProperty("");
     } else if (SUPPORTED_PROPERTY_TYPE.BOOLEAN.name().equals(type)) {
-      return DomainSpecificLanguage.booleanProperty();
+      return booleanProperty("");
     } else {
       throw new RuntimeException("Unsupported Property Type");
     }
