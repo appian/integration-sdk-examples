@@ -15,7 +15,6 @@ import com.appian.connectedsystems.templateframework.sdk.IntegrationError;
 import com.appian.connectedsystems.templateframework.sdk.IntegrationResponse;
 import com.appian.connectedsystems.templateframework.sdk.TemplateId;
 import com.appian.connectedsystems.templateframework.sdk.configuration.Choice;
-import com.appian.connectedsystems.templateframework.sdk.configuration.DomainSpecificLanguage;
 import com.appian.connectedsystems.templateframework.sdk.configuration.PropertyPath;
 import com.appian.connectedsystems.templateframework.sdk.configuration.RefreshPolicy;
 import com.appian.connectedsystems.templateframework.sdk.configuration.TextPropertyDescriptor;
@@ -81,7 +80,7 @@ public class ErrorHandlingIntegrationTemplate extends SimpleIntegrationTemplate 
     String statusCode = integrationConfiguration.getValue(HTTP_STATUS_CODE_KEY);
 
     Map<String,Object> requestDiagnosticsMap = new HashMap<>(); //diagnostic data to show under request tab
-    Map<String, String> responseDiagnosticsMap = new HashMap<>(); //diagnostic data to show under response tab
+    Map<String,Object> responseDiagnosticsMap = new HashMap<>(); //diagnostic data to show under response tab
     IntegrationError.IntegrationErrorBuilder integrationErrorBuilder = new IntegrationError.IntegrationErrorBuilder();
 
     IntegrationDesignerDiagnostic.IntegrationDesignerDiagnosticBuilder diagnosticBuilder = IntegrationDesignerDiagnostic
@@ -126,7 +125,7 @@ public class ErrorHandlingIntegrationTemplate extends SimpleIntegrationTemplate 
     return Arrays.stream(HttpStatusCode.values()).map(httpStatusCode -> {
       int code = httpStatusCode.getCode();
       String name = httpStatusCode.name() + ": " + code;
-      return DomainSpecificLanguage.choice().name(name).value(Integer.toString(code)).build();
+      return Choice.builder().name(name).value(Integer.toString(code)).build();
     }).toArray(Choice[]::new);
   }
 
