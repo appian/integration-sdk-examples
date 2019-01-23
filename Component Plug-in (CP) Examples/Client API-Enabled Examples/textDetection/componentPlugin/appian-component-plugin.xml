@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appian-extension name="textDetection" key="text.detection">
-  <extension-info>
+<appian-component-plugin name="textDetection" key="text.detection">
+  <plugin-info>
     <description>Detects text in user supplied images</description>
     <vendor name="Appian" url="http://www.appian.com" />
     <version>1.0</version>
-  </extension-info>
+    <support supported="true" email="support@appian.com" url="https://community.appian.com"/>
+  </plugin-info>
 
   <!-- Add a new component with every version you create -->
   <!-- This v1.0.0 component maps to the v1 folder -->
-  <component ruleName="textDetection" key="text.detection.component" version="1.0.0">
-    <supportedUserAgents>chrome</supportedUserAgents>
-    <iconFile>textDetection.svg</iconFile>
+  <component rule-name="textDetection" key="text.detection.component" version="1.0.0">
+    <supported-user-agents>chrome</supported-user-agents>
+    <icon-file>textDetection.svg</icon-file>
     <parameter>
       <name>imageUrl</name>
       <category>input-only</category>
@@ -28,4 +29,4 @@
     <html-entry-point>index.html</html-entry-point>
     <sdk-version>2.0.0</sdk-version>
   </component>
-</appian-extension>
+</appian-component-plugin>
