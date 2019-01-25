@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
   compileOnly 'com.appian:connected-systems-core:1.0.1'
-  implementation 'com.appian:connected-systems-client:0.3.0'
+  implementation 'com.appian:connected-systems-client:1.0.0'
   testImplementation 'com.appian:connected-systems-core:1.0.1'
 }
 

@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
   compileOnly 'com.appian:connected-systems-core:1.0.1'
-  implementation 'com.appian:connected-systems-client:0.3.0'
+  implementation 'com.appian:connected-systems-client:1.0.0'
   implementation 'org.apache.httpcomponents:httpclient:4.5.6'
   implementation 'org.apache.httpcomponents:httpmime:4.2.5'
   implementation 'com.google.apis:google-api-services-drive:v3-rev125-1.24.1'
