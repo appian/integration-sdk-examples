@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 /**
- * Object representation of the response we want to pass back to the CSE
+ * Object representation of the response we want to pass back to the CP
  */
 public class OutputResponse {
   public List<String> textFound;
@@ -29,7 +29,7 @@ public class OutputResponse {
     }
 
     /**
-     * Converts the Google bounding boxes to what the CSE expects
+     * Converts the Google bounding boxes to what the CP expects
      * [(topLeft)[x,y], (topRight)[x,y], (bottomRight)[x,y], (bottomLeft)[x,y]] -> [left, top, width, height]
      */
     static BoundingBox fromVertices(List<AnnotationResponse.Vertex> vertices) {
