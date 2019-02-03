@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src='APPIAN_JS_SDK_URI'></script>
+</head>
+
+<body id='content-container' style='background-color: skyblue; margin: 0px;'>
+  <script>
+    let defaultHeight = '100px';
+
+    // Handle a new user input location from SAIL.
+    Appian.Component.onNewValue(function (newValues) {
+      let containerHeight = newValues.height;
+      let contentHeight = newValues.contentHeight;
+      let adaptHeight = newValues.adaptHeight;
+
+      // If no explicit content height is provided, use a default
+      if (!contentHeight) {
+        contentHeight = defaultHeight;
+      }
+
+      if (containerHeight === 'auto') {
+        // If the designer has set the height to Auto, use the content's original height
+        setContentHeight(contentHeight);
+      } else {
+        // If the designer has set a fixed height, decide if the component should adapt or keep its original height
+        if (newValues.adaptHeight) {
+          // If the component will adapt, set the height to exactly match the designer selection
+          setContentHeight(containerHeight);
+        } else {
+          // If the component won't adapt, use the original content height
+          setContentHeight(contentHeight);
+        }
+      }
+
+      // Show the designer's inputs for context
+      document.getElementById('content-container').innerHTML = 'Container Height: ' + containerHeight + ', Content Height: ' + contentHeight;
+    });
+
+    function setContentHeight(height) {
+      document.getElementById('content-container').style.height = height;
+    }
+  </script>
+</body>
+</html>
