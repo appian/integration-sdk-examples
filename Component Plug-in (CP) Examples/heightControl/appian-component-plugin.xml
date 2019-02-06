@@ -23,4 +23,28 @@
     <html-entry-point>index.html</html-entry-point>
     <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
   </component>
+
+  <component rule-name="adjustableHeightExample" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
+    <icon-name>arrows-v</icon-name>
+    <parameter>
+      <name>nop</name>
+      <category>input-only</category>
+      <type>Text</type>
+    </parameter>
+    <html-entry-point>index.html</html-entry-point>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+  </component>
+
+  <component rule-name="fixedHeightExample" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
+    <icon-name>bars</icon-name>
+    <parameter>
+      <name>exampleHeight</name>
+      <category>input-only</category>
+      <type>Text</type>
+    </parameter>
+    <html-entry-point>index.html</html-entry-point>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+  </component>
 </appian-component-plugin>
