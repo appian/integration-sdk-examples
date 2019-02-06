@@ -1,4 +1,4 @@
-<appian-plugin name="My Corp Connected System - Text Detection" key="text-detection">
+<appian-plugin name="My Corp Connected System - Text Detection" key="com.mycorp.textdetection">
 
   <plugin-info>
     <description>My Corp Connected System - Text Detection</description>

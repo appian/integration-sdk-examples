@@ -1,4 +1,4 @@
-<appian-plugin name="My Corp Connected System - Google Drive Multi-Operation OAuth Sample" key="google-drive-multi-operation-sample">
+<appian-plugin name="My Corp Connected System - Google Drive Multi-Operation OAuth Sample" key="com.mycorp.google.drive">
 
   <plugin-info>
     <description>My Corp Connected System - Google Drive Sample with multiple operations</description>

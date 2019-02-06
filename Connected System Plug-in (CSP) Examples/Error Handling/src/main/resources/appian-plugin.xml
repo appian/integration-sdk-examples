@@ -1,4 +1,4 @@
-<appian-plugin name="My Corp Connected System - Error Handling" key="error-handling">
+<appian-plugin name="My Corp Connected System - Error Handling" key="com.mycorp.errorhandling">
 
   <plugin-info>
     <description>My Corp Connected System - Error Handling</description>

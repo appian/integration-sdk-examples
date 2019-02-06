@@ -1,4 +1,4 @@
-<appian-plugin name="Data Entry Connected System - Dynamic Data Structure" key="data-entry">
+<appian-plugin name="Data Entry Connected System - Dynamic Data Structure" key="com.mycorp.dataentry">
 
   <plugin-info>
     <description>Data Entry Connected System - Dynamic Data Structures</description>

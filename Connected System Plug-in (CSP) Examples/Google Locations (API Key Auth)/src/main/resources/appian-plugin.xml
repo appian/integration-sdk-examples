@@ -1,4 +1,4 @@
-<appian-plugin name="My Corp Connected System - APIKey Sample Template" key="sample-api-key-plug-in">
+<appian-plugin name="My Corp Connected System - APIKey Sample Template" key="com.mycorp.apikey">
 
   <plugin-info>
     <description>My Corp Connected System - API Key Sample Plug-in</description>
