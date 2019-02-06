@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appian-component-plugin name="Height Control Example" key="com.appian.plugin.component.heightControl">
   <plugin-info>
-    <description>An example of controling height in a component plug-in</description>
+    <description>An example of controlling height in a component plug-in</description>
     <vendor name="Appian" url="http://www.appian.com" />
     <support supported="false" url="https://community.appian.com"/>
     <version>1.0.0</version>
