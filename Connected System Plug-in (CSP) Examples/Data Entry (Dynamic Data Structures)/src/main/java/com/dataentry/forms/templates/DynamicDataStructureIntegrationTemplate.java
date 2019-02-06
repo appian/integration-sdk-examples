@@ -31,12 +31,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTemplate {
 
   /**
-   * This is an example of an Integration Template that uses dynamic data structures. It's a template that
+   * This is an example of an Integration Template that uses dynamic data structures. This integration
    * reads in data structures defined in a json file and create properties to represent the data structures.
    * This simulates retrieving data structures from an external system, such as Amazon Machine Learning models,
    * or data tables defined in a Salesforce system.
    *
-   * In this example, it's a Data Entry template that allows the user to fill an Account form or a Customer
+   * In this example, it's a Data Entry plug-in that allows the user to fill an Account form or a Customer
    * form based on the selection of the form. The Integration Template will simply take in the entry values,
    * and return them to the result.
    */
@@ -60,7 +60,7 @@ public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTe
       SimpleConfiguration connectedSystemConfiguration,
       PropertyPath propertyPath,
       ExecutionContext executionContext) {
-    //Here, we read the data structure from an example JSON file. In your template, replace this with whatever
+    //Here, we read the data structure from an example JSON file. In your plug-in, replace this with whatever
     // logic you need to retrieve the data structure from your external system.
     JsonNode externalDataTypes = getExternalDataTypes();
     TextPropertyDescriptor formDropdown = createFormDropdown(externalDataTypes);
@@ -77,7 +77,7 @@ public class DynamicDataStructureIntegrationTemplate extends SimpleIntegrationTe
   /**
    * Typically, you will want to send a HTTP request to an external system here, such as updating
    * a table in a Salesforce system.
-   * In this template, we simply return the user inputs to the result, request and response tabs.
+   * In this integration, we simply return the user inputs to the result, request and response tabs.
    */
   @Override
   protected IntegrationResponse execute(

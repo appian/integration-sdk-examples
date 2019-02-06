@@ -1,7 +1,7 @@
-<appian-plugin name="My Corp Connected System - APIKey Sample Template" key="sample-api-key-template">
+<appian-plugin name="My Corp Connected System - APIKey Sample Template" key="sample-api-key-plug-in">
 
   <plugin-info>
-    <description>My Corp Connected System - API Key Sample Template</description>
+    <description>My Corp Connected System - API Key Sample Plug-in</description>
     <vendor name="My Corporation" url="http://www.mycorp.com"/>
     <version>1.0.0.0</version>
     <application-version min="7.6.0.4"/>

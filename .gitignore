@@ -10,7 +10,7 @@
 /**/.project
 /**/gradle/**
 /**/.idea/**
-/**/github-cst.properties
+/**/github-csp.properties
 
 # Inclusions
 !/**/.idea/gradle.xml
