@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src='APPIAN_JS_SDK_URI'></script>
+</head>
+
+<body>
+  <span id='localeLabel'></span>: <input type='text' id='localeField'><br>
+  <span id='dateTimeLabel'></span>: <input type='text' id='dateTimeField'><br>
+  <script>
+    // Create a translation table
+    let i18n = {
+      'en-US': {
+        localeLabel: "Locale",
+        dateTimeLabel: "Date & Time"
+      },
+      'de': {
+        localeLabel: "Benutzergebietsschema",
+        dateTimeLabel: "Datum und Uhrzeit"
+      }
+    };
+
+    // Set the initial locale
+    let locale = Appian.getLocale();
+    updateLocale(locale);
+
+    // Show the current locale in the component
+    let localeField = document.getElementById('localeField');
+    localeField.value = locale;
+
+    Appian.Component.onNewValue(function (newValues) {
+      // Check to see if we need to update the translations
+      if (Appian.getLocale() !== locale) {
+        locale = Appian.getLocale();
+        updateLocale(locale);
+      }
+
+      // Format and display the date parameter
+      let dateTime = newValues.dateTime;
+      let dateTimeField = document.getElementById('dateTimeField');
+      if (dateTime) {
+        let dateTimeObj = new Date(dateTime);
+        dateTimeField.value = dateTimeObj.toLocaleString(locale);
+      } else {
+        dateTimeField.value = '';
+      }
+    });
+
+    function updateLocale(locale) {
+      // For each label, set the text using the translation table lookup
+      document.getElementById('localeLabel').innerHTML = i18n[locale].localeLabel;
+      document.getElementById('dateTimeLabel').innerHTML = i18n[locale].dateTimeLabel;
+    }
+  </script>
+</body>
+</html>
