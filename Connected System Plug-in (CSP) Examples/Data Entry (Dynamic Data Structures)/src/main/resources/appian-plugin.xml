@@ -1,0 +1,17 @@
+<appian-plugin name="Data Entry Connected System - Dynamic Data Structure" key="com.mycorp.dataentry">
+
+  <plugin-info>
+    <description>Data Entry Connected System - Dynamic Data Structures</description>
+    <vendor name="My Corporation" url="http://www.mycorp.com"/>
+    <version>1.0.0.0</version>
+    <application-version min="18.3.0.0"/>
+  </plugin-info>
+
+  <connected-system-template key="DynamicDataStructureConnectedSystemTemplate" name="DynamicDataStructureConnectedSystemTemplate"
+                             class="com.dataentry.forms.templates.DynamicDataStructureConnectedSystemTemplate">
+
+    <integration-template key="DynamicDataStructureIntegrationTemplate" name="DynamicDataStructureIntegrationTemplate"
+                          class="com.dataentry.forms.templates.DynamicDataStructureIntegrationTemplate" />
+
+  </connected-system-template>
+</appian-plugin>

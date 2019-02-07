@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<appian-component-plugin name="textDetection" key="text.detection">
+<appian-component-plugin name="textDetection" key="com.mycorp.text.detection">
   <plugin-info>
     <description>Detects text in user supplied images</description>
     <vendor name="Appian" url="http://www.appian.com" />
