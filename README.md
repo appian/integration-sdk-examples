@@ -1,6 +1,6 @@
 # Integration SDK Examples
 
-This repo provides Appian partners with examples of how to create Connected System Plug-ins and Component Plug-ins during the SDKs' beta period. If you are interested in participating in the beta program, please email integrationsbeta@appian.com.
+This repo provides Appian partners with examples of how to create Connected System Plug-ins and Component Plug-ins.
 
 ## Connected System Plug-in (CSP) SDK
 The Connected System Plug-in (CSP) SDK gives developers a toolkit for providing designers with simple, point-click integration experiences. With the SDK, developers can create Connected System Plug-ins that appear alongside out-of-the-box Connected Systems like Google Cloud Natural Language or Amazon Machine Learning in the Appian Designer UI.
