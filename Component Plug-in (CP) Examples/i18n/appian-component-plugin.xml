@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<appian-component-plugin name="Component Plug-in i18n Examples" key="com.appian.plugin.component.exampls.i18n">
+  <plugin-info>
+    <description>Examples of internationalization in a component plug-in</description>
+    <vendor name="Appian" url="http://www.appian.com" />
+    <support supported="false" email="support@appian.com" url="https://community.appian.com"/>
+    <version>1.0</version>
+  </plugin-info>
+
+  <component rule-name="i18nExample" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
+    <icon-name>language</icon-name>
+    <parameter>
+      <name>dateTime</name>
+      <category>input-only</category>
+      <type>Text</type>
+    </parameter>
+    <html-entry-point>index.html</html-entry-point>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+  </component>
+</appian-component-plugin>
