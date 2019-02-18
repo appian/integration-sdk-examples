@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src='APPIAN_JS_SDK_URI'></script>
+</head>
+
+<body style='margin: 0px;'>
+  <div id='content-container' style='background-color: skyblue; overflow: auto;'>
+    <div id='embedded-form'>
+      <p>This is an example of fixed height content, like an embedded form.</p>
+    </div>
+  </div>
+  <script>
+    Appian.Component.onNewValue(function (newValues) {
+      // For example purposes only! Set the fixed height using a parameter
+      let exampleHeight = newValues.exampleHeight;
+      document.getElementById('embedded-form').style.height = exampleHeight;
+
+      // Capture Height Parameter
+      let containerHeight = newValues.height;
+
+      // Auto: Maximum Height
+      if (containerHeight === 'auto') {
+        let div = document.getElementById('content-container');
+        let elementHeight = div.offsetHeight;
+        let style = getComputedStyle(div);
+        elementHeight += parseInt(style.marginTop) + parseInt(style.marginBottom);
+
+        if (elementHeight < 840) {
+          document.getElementById('content-container').style.height = 'auto';
+        } else {
+          document.getElementById('content-container').style.height = 840 + 'px';
+        }
+      }
+
+      // Preset Heights
+      if (containerHeight !== 'auto') {
+        document.getElementById('content-container').style.height = 'auto';
+      }
+    });
+  </script>
+</body>
+</html>

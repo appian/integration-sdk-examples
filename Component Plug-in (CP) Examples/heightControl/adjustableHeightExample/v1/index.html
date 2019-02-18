@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src='APPIAN_JS_SDK_URI'></script>
+</head>
+
+<body style='margin: 0px;'>
+  <div id='content-container' style='background-color: skyblue; overflow: auto;'>
+    <p>This is an example of adjustable height content, like a map.</p>
+  </div>
+  <script>
+    Appian.Component.onNewValue(function (newValues) {
+      // Capture Height Parameter
+      let containerHeight = newValues.height;
+
+      // Auto: Set a Default Height
+      if (containerHeight === 'auto') {
+        document.getElementById('content-container').style.height = '400px';
+      }
+
+      // Preset Heights
+      if (containerHeight !== 'auto') {
+        document.getElementById('content-container').style.height = containerHeight;
+      }
+    });
+  </script>
+</body>
+</html>
