@@ -10,6 +10,7 @@ dependencies {
   compileOnly 'com.appian:connected-systems-core:1.0.2'
   implementation 'com.appian:connected-systems-client:1.0.1'
   testImplementation 'com.appian:connected-systems-core:1.0.2'
+  implementation 'commons-io:commons-io:2.4'
 }
 
 
