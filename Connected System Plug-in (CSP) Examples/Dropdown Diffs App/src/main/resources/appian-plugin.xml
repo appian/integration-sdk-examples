@@ -1,0 +1,17 @@
+<appian-plugin name="Dropdown Diffs App" key="com.mycorp.dropdowndiffsapp">
+
+  <plugin-info>
+    <description>Dropdown Diffs App</description>
+    <vendor name="My Corporation" url="http://www.mycorp.com"/>
+    <version>1.0.0.0</version>
+    <application-version min="7.6.0.4"/>
+  </plugin-info>
+
+  <connected-system-template key="DropdownDiffsConnectedSystem" name="DropdownDiffsConnectedSystem"
+                             class="com.mycorp.dropdowndiffsapp.templates.DropdownDiffsConnectedSystemTemplate">
+
+    <integration-template key="DropdownDiffsIntegrationTemplate" name="DropdownDiffsIntegrationTemplate"
+                          class="com.mycorp.dropdowndiffsapp.templates.DropdownDiffsIntegrationTemplate" />
+
+  </connected-system-template>
+</appian-plugin>
