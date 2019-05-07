@@ -29,9 +29,9 @@ public class DropdownDiffsConnectedSystemTemplate extends SimpleConnectedSystemT
                 textProperty("localTypeDropdown_cs").label("Local Type Dropdown")
                   .description("a;lsdkfjas;ldkfjasdf")
                   .choices(new Choice.ChoiceBuilder().name("Local Type Dropdown Choice 1")
-                      .value("local_type_dropdown_choice_1_cs")
+                      .value("local_type_dropdown_choice_1_cs_changed")
                       .build(), new Choice.ChoiceBuilder().name("Local Type Dropdown Choice 2")
-                      .value("local_type_dropdown_choice_2_cs")
+                      .value("local_type_dropdown_choice_2_cs_changed")
                       .build())
                   .build(),
                 textProperty("localTypeTextBox").label("Local Type Text Box")
@@ -40,9 +40,9 @@ public class DropdownDiffsConnectedSystemTemplate extends SimpleConnectedSystemT
             .build(), "localTypeCS").build(),
         textProperty("rootPropertyDropdown_cs").label("Root Property Dropdown")
             .choices(new Choice.ChoiceBuilder().name("Root Property Choice 1")
-                .value("root_property_choice_1_cs")
+                .value("root_property_choice_1_cs_changed")
                 .build(), new Choice.ChoiceBuilder().name("Root Property Choice 2")
-                .value("root_property_choice_2_cs")
+                .value("root_property_choice_2_cs_changed")
                 .build())
             .description("This will be concatenated with the integration text property on execute")
             .build(),

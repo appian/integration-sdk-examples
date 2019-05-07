@@ -44,9 +44,9 @@ public class DropdownDiffsIntegrationTemplate extends SimpleIntegrationTemplate 
                 textProperty("localTypeDropdown_int").label("Local Type Dropdown")
                   .description("a;lsdkfjas;ldkfjasdf")
                   .choices(new Choice.ChoiceBuilder().name("Local Type Dropdown Choice 1")
-                      .value("local_type_dropdown_choice_1_int")
+                      .value("local_type_dropdown_choice_1_int_changed")
                       .build(), new Choice.ChoiceBuilder().name("Local Type Dropdown Choice 2")
-                      .value("local_type_dropdown_choice_2_int")
+                      .value("local_type_dropdown_choice_2_int_changed")
                       .build())
                   .build(),
                 textProperty("localTypeTextBox_int").label("Local Type Text Box")
@@ -55,9 +55,9 @@ public class DropdownDiffsIntegrationTemplate extends SimpleIntegrationTemplate 
             .build(), "localTypeInt").build(),
         textProperty("rootPropertyDropdown_int").label("Root Property Dropdown")
             .choices(new Choice.ChoiceBuilder().name("Root Property Choice 1")
-                .value("root_property_choice_1_int")
+                .value("root_property_choice_1_int_changed")
                 .build(), new Choice.ChoiceBuilder().name("Root Property Choice 2")
-                .value("root_property_choice_2_int")
+                .value("root_property_choice_2_int_changed")
                 .build())
             .description("This will be concatenated with the integration text property on execute")
             .build(),
