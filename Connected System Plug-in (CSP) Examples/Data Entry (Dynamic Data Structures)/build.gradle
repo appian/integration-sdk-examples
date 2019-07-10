@@ -7,13 +7,13 @@ repositories {
 }
 
 dependencies {
-  compileOnly 'com.appian:connected-systems-core:1.0.2'
-  implementation 'com.appian:connected-systems-client:1.0.1'
+  compileOnly 'com.appian:connected-systems-core:1.2.0'
+  implementation 'com.appian:connected-systems-client:1.1.0'
   implementation 'com.fasterxml.jackson.core:jackson-core:2.9.6'
   implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
   implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.6'
   implementation 'commons-io:commons-io:2.4'
-  testImplementation 'com.appian:connected-systems-core:1.0.2'
+  testImplementation 'com.appian:connected-systems-core:1.2.0'
 }
 
 
