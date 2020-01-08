@@ -16,6 +16,17 @@
       <type>Text</type>
     </parameter>
     <parameter>
+      <name>zoomLevel</name>
+      <category>input-only</category>
+      <type>
+        <enum>
+          <choice>WORLD</choice>
+          <choice>CITY</choice>
+          <choice>BUILDINGS</choice>
+        </enum>
+      </type>
+    </parameter>
+    <parameter>
       <name>location</name>
       <category>input-only</category>
       <type>Text</type>

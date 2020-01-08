@@ -11,13 +11,14 @@
   <script>
     let mapState = {};
     let currentLocation = '';
-    let newKey, currentKey, newLocation;
+    let newKey, currentKey, newLocation, currentZoomLevel, newZoomLevel;
     let mapsApiScriptId = 'google-maps-api-script';
 
     // Handle a new user input location from SAIL.
     Appian.Component.onNewValue(function (newValues) {
       newKey = newValues.key;
       newLocation = newValues.location;
+      newZoomLevel = newValues.zoomLevel;
       if (newLocation && !(currentKey || newKey)) {
         Appian.Component.setValidations('The API Key provided is empty. Please update the parameter "Google API Key" with a valid key.');
       }
@@ -36,8 +37,19 @@
         s.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=' + newKey + '&callback=initMap');
         document.body.appendChild(s);
       }
-      if (mapState.scriptLoaded && currentLocation !== newLocation) {
-        changeLocation(newLocation);
+      if (mapState.scriptLoaded) {
+        var changed = false;
+        if (currentZoomLevel !== newZoomLevel) {
+          currentZoomLevel = newZoomLevel
+          changed = true;
+        }
+        if (currentLocation !== newLocation) {
+          currentLocation = newLocation;
+          changed = true;
+        }
+        if (changed) {
+          changeLocation();
+        }
       }
     });
 
@@ -45,7 +57,9 @@
       // Clear the validation if a valid API key has been added but no location is present yet
       Appian.Component.setValidations('');
       mapState.scriptLoaded = true;
-      changeLocation(newLocation);
+      currentLocation = newLocation;
+      currentZoomLevel = newZoomLevel;
+      changeLocation();
     }
 
     // Global function required by Google Maps API for catching authentication failures
@@ -54,9 +68,8 @@
       Appian.Component.setValidations('The API Key provided is invalid. Please update the parameter "Google API Key" with a valid key.');
     };
 
-    function changeLocation(newLocation) {
-      if (newLocation) {
-        currentLocation = newLocation;
+    function changeLocation() {
+      if (currentLocation) {
         // Obtain coordinates for user input location
         mapState.geocoder = mapState.geocoder || new google.maps.Geocoder();
         mapState.geocoder.geocode({ 'address': newLocation }, function (results, status) {
@@ -65,6 +78,7 @@
             Appian.Component.setValidations('');
             let latLng = results[0].geometry.location;
             if (mapState.map) {
+              mapState.map.setZoom(getZoomLevel(currentZoomLevel))
               mapState.map.setCenter(latLng);
             } else {
               renderMap(latLng);
@@ -80,7 +94,7 @@
       // Render a map at the requested coordinates
       mapState.container = document.getElementById('map-container');
       mapState.map = new google.maps.Map(mapState.container, {
-        zoom: 12,
+        zoom: getZoomLevel(currentZoomLevel),
         center: latLng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
@@ -110,6 +124,18 @@
           longitude: pinLatLng.lng()
         });
       });
+    }
+
+    function getZoomLevel(zoomLevel) {
+      if(!zoomLevel) {
+        return 10
+      } else if (zoomLevel === "WORLD") {
+        return 1;
+      } else if (zoomLevel === "CITY") {
+        return 10;
+      } else if (zoomLevel === "BUILDINGS") {
+        return 20;
+      }
     }
   </script>
 </body>
