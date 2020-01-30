@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='./container.css'></link>
+</head>
+
+<body>
+  <div id='container'></div>
+  <script src='APPIAN_JS_SDK_URI'></script>
+  <script>
+    let colors;
+
+    Appian.Component.onNewValue(newValues => {
+      colors = newValues.colors;
+      let backgroundColor;
+      if (!colors || colors.length === 0) {
+        backgroundColor = "WHITE";
+      } else if (colors.length === 1) {
+        backgroundColor = colors[0];
+      } else {
+        backgroundColor = "PURPLE";
+      }
+      document.getElementById("container").style.backgroundColor = backgroundColor;
+    })
+
+  </script>
+</body>
+</html>
