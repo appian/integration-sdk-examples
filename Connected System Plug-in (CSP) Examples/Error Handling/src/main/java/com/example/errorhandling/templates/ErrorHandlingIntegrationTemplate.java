@@ -21,6 +21,8 @@ import com.appian.connectedsystems.templateframework.sdk.configuration.TextPrope
 import com.appian.connectedsystems.templateframework.sdk.diagnostics.IntegrationDesignerDiagnostic;
 import com.appian.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateRequestPolicy;
 import com.appian.connectedsystems.templateframework.sdk.metadata.IntegrationTemplateType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 // Must provide an integration id. This value need only be unique for this connected system
 @TemplateId(name = "ErrorHandlingIntegrationTemplate")
@@ -46,6 +48,8 @@ public class ErrorHandlingIntegrationTemplate extends SimpleIntegrationTemplate 
 
   public static final String PHONE_NUMBER_KEY = "phoneNumber";
   public static final String HTTP_STATUS_CODE_KEY = "httpStatusCode";
+
+  Logger logger = LoggerFactory.getLogger(ErrorHandlingIntegrationTemplate.class);
 
   @Override
   protected SimpleConfiguration getConfiguration(
@@ -108,6 +112,7 @@ public class ErrorHandlingIntegrationTemplate extends SimpleIntegrationTemplate 
           .withDiagnostic(diagnosticBuilder.build())
           .build();
     } catch (Exception e) {
+      logger.error(e.getMessage(), e);
       integrationErrorBuilder.title("https://www.httpbin.org returns the following exception:");
       integrationErrorBuilder.message(e.getMessage());
       responseDiagnosticsMap.put("Error Response", e.toString());
