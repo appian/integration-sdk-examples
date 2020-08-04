@@ -1,0 +1,31 @@
+<appian-plugin name="Major Versioned CSP" key="com.mycorp.majorversionedcsp">
+
+  <plugin-info>
+    <description>Major Versioned CSP</description>
+    <vendor name="My Corporation" url="http://www.mycorp.com"/>
+    <!-- Remember to major version your plug-in when major versioning the template -->
+    <version>2.0.0.0</version>
+    <application-version min="7.6.0.4"/>
+  </plugin-info>
+
+  <connected-system-template key="ExampleConnectedSystem" name="ExampleConnectedSystem"
+                             class="com.mycorp.helloworld.templates.v1.ExampleConnectedSystemTemplate">
+
+    <integration-template key="ExampleIntegrationTemplate" name="ExampleIntegrationTemplate"
+                          class="com.mycorp.helloworld.templates.v1.ExampleIntegrationTemplate" />
+
+  </connected-system-template>
+
+  <!-- IMPORTANT, the key must change between between versions. This is used by the OSGI framework as a unique identifier
+        for each module in the plugin.
+        The class should also point to the new versions of the class that were created.
+        The integration-template key and the names can stay the same between major versions
+    -->
+  <connected-system-template key="ExampleConnectedSystem2" name="ExampleConnectedSystem"
+                             class="com.mycorp.helloworld.templates.v2.ExampleConnectedSystemTemplate2">
+
+    <integration-template key="ExampleIntegrationTemplate" name="ExampleIntegrationTemplate"
+                          class="com.mycorp.helloworld.templates.v2.ExampleIntegrationTemplate2" />
+
+  </connected-system-template>
+</appian-plugin>
