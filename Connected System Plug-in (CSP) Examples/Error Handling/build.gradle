@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
   compileOnly 'com.appian:connected-systems-core:1.2.0'
+  compileOnly 'org.slf4j:slf4j-api:1.7.3'
   implementation 'com.appian:connected-systems-client:1.1.0'
   implementation 'org.apache.httpcomponents:httpclient:4.5.6'
   testImplementation 'com.appian:connected-systems-core:1.2.0'
