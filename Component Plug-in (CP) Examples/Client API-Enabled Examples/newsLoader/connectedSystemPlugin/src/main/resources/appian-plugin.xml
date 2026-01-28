@@ -1,0 +1,14 @@
+<appian-plugin name="My Corp Connected System - News Loader" key="com.mycorp.newsloader">
+
+  <plugin-info>
+    <description>My Corp Connected System - News Loader</description>
+    <vendor name="My Corporation" url="http://www.mycorp.com"/>
+    <version>1.0.0.0</version>
+    <application-version min="7.6.0.4"/>
+  </plugin-info>
+
+  <connected-system-template key="NewsLoaderConnectedSystemTemplate" name="NewsLoaderConnectedSystemTemplate" class="com.mycorp.newsloader.templates.NewsLoaderConnectedSystemTemplate">
+    <client-api key="LoadNews" name="LoadNewsClientApi" class="com.mycorp.newsloader.templates.LoadNewsFromFolderClientAPI" />
+    <client-api key="StoreNews" name="StoreNewsClientApi" class="com.mycorp.newsloader.templates.StoreNewsToFolderClientAPI" />
+  </connected-system-template>
+</appian-plugin>

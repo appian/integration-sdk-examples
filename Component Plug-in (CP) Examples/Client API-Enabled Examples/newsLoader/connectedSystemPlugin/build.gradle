@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.mycorp'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'com.appian:connected-systems-core:1.10.0'
+    implementation 'com.appian:connected-systems-client:1.4.0'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // Appian's suite API jar
+    compileOnly files('lib/appian-plug-in-sdk.jar')
+}
+
+test {
+    useJUnitPlatform()
+}

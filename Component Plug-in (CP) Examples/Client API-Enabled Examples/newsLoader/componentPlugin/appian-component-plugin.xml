@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<appian-component-plugin name="newsLoader" key="com.mycorp.news.loader">
+  <plugin-info>
+    <description>Loads latest News</description>
+    <vendor name="Appian" url="www.example.com"/>
+    <version>1.0.0</version>
+    <support supported="true" phone="xxx-xxx-xxxx" email="support@example.com" url="https://community.appian.com"/>
+  </plugin-info>
+  <component rule-name="newsLoader" version="1.0.0">
+    <sdk-version>2.0.0</sdk-version>
+    <supported-user-agents>chrome firefox ie11 edge safari mobile</supported-user-agents>
+    <icon-file>image.svg</icon-file>
+    <html-entry-point>index.html</html-entry-point>
+    <parameter>
+      <name>connectedSystem</name>
+      <category>input-only</category>
+      <type>ConnectedSystem</type>
+      <required>connectedSystem field is required.</required>
+    </parameter>
+    <parameter>
+      <name>saveNewsToFolder</name>
+      <category>input-only</category>
+      <type>TypedValue</type>
+      <secured>hidden</secured>
+      <required>saveNewsToFolder field is required.</required>
+    </parameter>
+    <parameter>
+      <name>userDetails</name>
+      <category>input-only</category>
+      <type>Dictionary</type>
+      <placeholder>
+        a!map(
+          "name": user(loggedInUser(), "firstName"),
+          "email": user(loggedInUser(), "email"),
+          "country": user(loggedInUser(), "country")
+        )
+      </placeholder>
+      <default>
+        {
+          "name": "Dummy Name",
+          "email": "dummy@email.com",
+          "country": "dummyCountry"
+        }
+      </default>
+    </parameter>
+    <parameter>
+      <name>canAddNews</name>
+      <category>input-only</category>
+      <type>Boolean</type>
+      <placeholder>
+        a!isUserMemberOfGroup(loggedInUser(), "editors")
+      </placeholder>
+      <secured>visible</secured>
+    </parameter>
+    <parameter>
+      <name>newsFreshness</name>
+      <category>input-only</category>
+      <type>
+        <enum>
+          <choice>latest</choice>
+          <choice>oneWeek</choice>
+          <choice>twoWeeks</choice>
+          <choice>oneMonth</choice>
+        </enum>
+      </type>
+      <placeholder>"latest"</placeholder>
+    </parameter>
+    <parameter>
+      <name>sortBy</name>
+      <category>input-only</category>
+      <type>Text</type>
+      <default-value>"latest-first"</default-value>
+    </parameter>
+  </component>
+</appian-component-plugin>
