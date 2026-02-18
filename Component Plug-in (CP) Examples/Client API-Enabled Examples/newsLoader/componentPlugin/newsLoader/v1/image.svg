@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs xmlns="http://www.w3.org/2000/svg">
+  <style>.cls-1 {
+        fill: #c41230;
+      }
+  </style>
+ </defs>
+ <g class="layer">
+  <title>Appian Logo</title>
+  <path class="cls-1" d="m72.67,92.53l0,-84.4l-23.24,0l-29.87,84.4l13.24,0l6.11,-18.84c1.68,-3.67 3.3,-3.87 6.34,-4.95l15.49,-5l0,28.69l1,0l0,0.15l10.93,-0.05zm-28.86,-34l12,-37.08l4.9,0l0,31.68l-16.9,5.4z" fill="black" id="svg_1" xmlns="http://www.w3.org/2000/svg"/>
+ </g>
+</svg>
